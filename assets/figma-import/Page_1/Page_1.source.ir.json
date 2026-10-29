@@ -1,0 +1,538 @@
+{
+  "version": "1.0",
+  "scope": "page",
+  "preserveVisual": true,
+  "source": {
+    "fileKey": "local",
+    "fileName": "Untitled",
+    "pageId": "0:1",
+    "pageName": "Page 1",
+    "exportedAt": "2026-05-28T13:19:08.330Z"
+  },
+  "designSize": {
+    "width": 690.470703125,
+    "height": 477.74615478515625
+  },
+  "root": {
+    "figmaId": "0:1",
+    "name": "Page 1",
+    "figmaType": "PAGE",
+    "type": "page",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 690.470703125,
+      "height": 477.74615478515625
+    },
+    "absRect": {
+      "x": 32.294742584228516,
+      "y": -216.74615478515625,
+      "width": 690.470703125,
+      "height": 477.74615478515625
+    },
+    "visible": true,
+    "included": true,
+    "organizeHint": "Page 根節點（內容邊界，不改變子節點位置）",
+    "children": [
+      {
+        "figmaId": "31:281",
+        "name": "right_toggle_name",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 338.7052574157715,
+          "y": 23.74615478515625,
+          "width": 207,
+          "height": 39
+        },
+        "absRect": {
+          "x": 371,
+          "y": -193,
+          "width": 207,
+          "height": 39
+        },
+        "text": "11111",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "children": []
+      },
+      {
+        "figmaId": "27:260",
+        "name": "left_toggle_name",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 250.70525741577148,
+          "y": 23.74615478515625,
+          "width": 207,
+          "height": 39
+        },
+        "absRect": {
+          "x": 283,
+          "y": -193,
+          "width": 207,
+          "height": 39
+        },
+        "text": "11111",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "children": []
+      },
+      {
+        "figmaId": "31:279",
+        "name": "left_toggle",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 250.70525741577148,
+          "y": 23.74615478515625,
+          "width": 41,
+          "height": 40
+        },
+        "absRect": {
+          "x": 283,
+          "y": -193,
+          "width": 41,
+          "height": 40
+        },
+        "asset": "textures/page_1/left_toggle.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "31:277",
+        "name": "right_toggle",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 334.7052574157715,
+          "y": 23.74615478515625,
+          "width": 41,
+          "height": 40
+        },
+        "absRect": {
+          "x": 367,
+          "y": -193,
+          "width": 41,
+          "height": 40
+        },
+        "asset": "textures/page_1/right_toggle.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "31:275",
+        "name": "confirm_btn_1",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 597.7052574157715,
+          "y": 228.74615478515625,
+          "width": 41,
+          "height": 40
+        },
+        "absRect": {
+          "x": 630,
+          "y": 12,
+          "width": 41,
+          "height": 40
+        },
+        "asset": "textures/page_1/confirm_btn_1.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "31:274",
+        "name": "comfirm_btn_2",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 597.7052574157715,
+          "y": 289.74615478515625,
+          "width": 41,
+          "height": 40
+        },
+        "absRect": {
+          "x": 630,
+          "y": 73,
+          "width": 41,
+          "height": 40
+        },
+        "asset": "textures/page_1/comfirm_btn_2.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "27:264",
+        "name": "message_text",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 383.7052574157715,
+          "y": 229.74615478515625,
+          "width": 168,
+          "height": 39
+        },
+        "absRect": {
+          "x": 416,
+          "y": 13,
+          "width": 168,
+          "height": 39
+        },
+        "text": "11111",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "children": []
+      },
+      {
+        "figmaId": "27:252",
+        "name": "message_text",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 383.7052574157715,
+          "y": 289.74615478515625,
+          "width": 168,
+          "height": 39
+        },
+        "absRect": {
+          "x": 416,
+          "y": 73,
+          "width": 168,
+          "height": 39
+        },
+        "text": "11111",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "children": []
+      },
+      {
+        "figmaId": "27:262",
+        "name": "message",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 390.7052574157715,
+          "y": 284.74615478515625,
+          "width": 257,
+          "height": 49
+        },
+        "absRect": {
+          "x": 423,
+          "y": 68,
+          "width": 257,
+          "height": 49
+        },
+        "asset": "textures/page_1/message.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "27:251",
+        "name": "message",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 390.7052574157715,
+          "y": 220.74615478515625,
+          "width": 257,
+          "height": 57
+        },
+        "absRect": {
+          "x": 423,
+          "y": 4,
+          "width": 257,
+          "height": 57
+        },
+        "asset": "textures/page_1/message.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "27:247",
+        "name": "title",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 383.7052574157715,
+          "y": 124.74615478515625,
+          "width": 246,
+          "height": 39
+        },
+        "absRect": {
+          "x": 416,
+          "y": -92,
+          "width": 246,
+          "height": 39
+        },
+        "text": "11111",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "children": []
+      },
+      {
+        "figmaId": "27:256",
+        "name": "panel_toggle_bg",
+        "figmaType": "RECTANGLE",
+        "type": "panel",
+        "rect": {
+          "x": 196.70525741577148,
+          "y": 11.74615478515625,
+          "width": 246,
+          "height": 64
+        },
+        "absRect": {
+          "x": 229,
+          "y": -205,
+          "width": 246,
+          "height": 64
+        },
+        "asset": "textures/page_1/panel_toggle_bg.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Panel 容器",
+        "children": []
+      },
+      {
+        "figmaId": "27:245",
+        "name": "panel_title_bg",
+        "figmaType": "RECTANGLE",
+        "type": "panel",
+        "rect": {
+          "x": 383.7052574157715,
+          "y": 116.74615478515625,
+          "width": 246,
+          "height": 40
+        },
+        "absRect": {
+          "x": 416,
+          "y": -100,
+          "width": 246,
+          "height": 40
+        },
+        "asset": "textures/page_1/panel_title_bg.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Panel 容器",
+        "children": []
+      },
+      {
+        "figmaId": "27:234",
+        "name": "title_name",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 36.705257415771484,
+          "y": 97.74615478515625,
+          "width": 96,
+          "height": 39
+        },
+        "absRect": {
+          "x": 69,
+          "y": -119,
+          "width": 96,
+          "height": 39
+        },
+        "text": "11111",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "children": []
+      },
+      {
+        "figmaId": "27:233",
+        "name": "tab",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 28.705257415771484,
+          "y": 95.74615478515625,
+          "width": 109,
+          "height": 40
+        },
+        "absRect": {
+          "x": 61,
+          "y": -121,
+          "width": 109,
+          "height": 40
+        },
+        "asset": "textures/page_1/tab.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "27:243",
+        "name": "title_name",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 36.705257415771484,
+          "y": 202.74615478515625,
+          "width": 96,
+          "height": 39
+        },
+        "absRect": {
+          "x": 69,
+          "y": -14,
+          "width": 96,
+          "height": 39
+        },
+        "text": "11111",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "children": []
+      },
+      {
+        "figmaId": "27:242",
+        "name": "tab",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 28.705257415771484,
+          "y": 201.74615478515625,
+          "width": 109,
+          "height": 40
+        },
+        "absRect": {
+          "x": 61,
+          "y": -15,
+          "width": 109,
+          "height": 40
+        },
+        "asset": "textures/page_1/tab.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "27:240",
+        "name": "title_name",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 36.705257415771484,
+          "y": 148.74615478515625,
+          "width": 96,
+          "height": 39
+        },
+        "absRect": {
+          "x": 69,
+          "y": -68,
+          "width": 96,
+          "height": 39
+        },
+        "text": "11111",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "children": []
+      },
+      {
+        "figmaId": "27:239",
+        "name": "tab",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 28.705257415771484,
+          "y": 148.74615478515625,
+          "width": 109,
+          "height": 40
+        },
+        "absRect": {
+          "x": 61,
+          "y": -68,
+          "width": 109,
+          "height": 40
+        },
+        "asset": "textures/page_1/tab.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "27:229",
+        "name": "tab_group_bg",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 19.705257415771484,
+          "y": 75.74615478515625,
+          "width": 253,
+          "height": 402
+        },
+        "absRect": {
+          "x": 52,
+          "y": -141,
+          "width": 253,
+          "height": 402
+        },
+        "asset": "textures/page_1/tab_group_bg.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "children": []
+      },
+      {
+        "figmaId": "4:6",
+        "name": "panel_chat_bg",
+        "figmaType": "RECTANGLE",
+        "type": "panel",
+        "rect": {
+          "x": 272.7052574157715,
+          "y": 75.74615478515625,
+          "width": 406,
+          "height": 402
+        },
+        "absRect": {
+          "x": 305,
+          "y": -141,
+          "width": 406,
+          "height": 402
+        },
+        "asset": "textures/page_1/panel_chat_bg.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Panel 容器",
+        "children": []
+      }
+    ]
+  }
+}

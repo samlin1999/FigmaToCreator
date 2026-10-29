@@ -1,0 +1,50 @@
+{
+  "name": "figma-importer",
+  "version": "0.1.0",
+  "package_version": 2,
+  "author": "FigmaToCreator",
+  "description": "讀取 Figma 匯出的 IR JSON，建立 Cocos UI 節點並產生 Prefab。",
+  "main": "./dist/main.js",
+  "editor": ">=3.8.8",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --platform=node --format=cjs --outfile=dist/main.js --external:fs --external:path && esbuild src/scene.ts --platform=node --format=cjs --outfile=dist/scene.js && node scripts/copy-panel.js"
+  },
+  "panels": {
+    "default": {
+      "title": "Figma 匯入",
+      "type": "dockable",
+      "main": "dist/panel.js",
+      "size": {
+        "min-width": 360,
+        "min-height": 480,
+        "width": 400,
+        "height": 560
+      }
+    }
+  },
+  "contributions": {
+    "scene": {
+      "script": "./dist/scene.js"
+    },
+    "menu": [
+      {
+        "path": "FigmaToCreator",
+        "label": "從 IR 產生 Prefab",
+        "message": "import-ir"
+      }
+    ],
+    "messages": {
+      "import-ir": {
+        "methods": ["importFromDialog"]
+      },
+      "generate-prefab-from-ir": {
+        "methods": ["generatePrefabFromIR"]
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.4.5"
+  }
+}

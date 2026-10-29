@@ -1,0 +1,1012 @@
+{
+  "version": "1.0",
+  "scope": "page",
+  "preserveVisual": true,
+  "source": {
+    "fileKey": "local",
+    "fileName": "Untitled",
+    "pageId": "0:1",
+    "pageName": "Page 1",
+    "exportedAt": "2026-05-28T13:19:08.330Z"
+  },
+  "designSize": {
+    "width": 690.470703125,
+    "height": 477.74615478515625
+  },
+  "root": {
+    "figmaId": "0:1",
+    "name": "Page 1",
+    "figmaType": "PAGE",
+    "type": "page",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 690.470703125,
+      "height": 477.74615478515625
+    },
+    "absRect": {
+      "x": 32.294742584228516,
+      "y": -216.74615478515625,
+      "width": 690.470703125,
+      "height": 477.74615478515625
+    },
+    "visible": true,
+    "included": true,
+    "organizeHint": "Page 根節點（內容邊界，不改變子節點位置）",
+    "children": [
+      {
+        "figmaId": "vc_background",
+        "name": "BackgroundLayer",
+        "figmaType": "VIRTUAL",
+        "type": "container",
+        "rect": {
+          "x": 19.705257415771484,
+          "y": 75.74615478515625,
+          "width": 659,
+          "height": 402
+        },
+        "absRect": {
+          "x": 52,
+          "y": -141,
+          "width": 659,
+          "height": 402
+        },
+        "visible": true,
+        "included": true,
+        "containerRole": "background",
+        "layout": {
+          "mode": "absolute"
+        },
+        "organizeHint": "雙面板背景層（右側主面板 + 左側分頁區）",
+        "children": [
+          {
+            "figmaId": "4:6",
+            "name": "panel_chat_bg",
+            "figmaType": "RECTANGLE",
+            "type": "panel",
+            "rect": {
+              "x": 253,
+              "y": 0,
+              "width": 406,
+              "height": 402
+            },
+            "absRect": {
+              "x": 305,
+              "y": -141,
+              "width": 406,
+              "height": 402
+            },
+            "asset": "textures/page_1/panel_chat_bg.png",
+            "visible": true,
+            "included": true,
+            "organizeHint": "右側主面板背景，四邊貼齊自適應",
+            "children": [],
+            "containerRole": "background",
+            "layout": {
+              "mode": "none"
+            },
+            "widget": {
+              "top": 0,
+              "left": 0,
+              "right": 0,
+              "bottom": 0,
+              "stretchWidth": true,
+              "stretchHeight": true
+            }
+          },
+          {
+            "figmaId": "27:229",
+            "name": "tab_group_bg",
+            "figmaType": "RECTANGLE",
+            "type": "sprite",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 253,
+              "height": 402
+            },
+            "absRect": {
+              "x": 52,
+              "y": -141,
+              "width": 253,
+              "height": 402
+            },
+            "asset": "textures/page_1/tab_group_bg.png",
+            "visible": true,
+            "included": true,
+            "organizeHint": "左側分頁區背景，左側與上下拉伸",
+            "children": [],
+            "containerRole": "background",
+            "layout": {
+              "mode": "none"
+            },
+            "widget": {
+              "top": 0.159,
+              "bottom": 0,
+              "left": 0.029,
+              "stretchHeight": true
+            }
+          }
+        ]
+      },
+      {
+        "figmaId": "vc_content",
+        "name": "ContentRoot",
+        "figmaType": "VIRTUAL",
+        "type": "container",
+        "rect": {
+          "x": 28.705257415771484,
+          "y": 11.74615478515625,
+          "width": 619,
+          "height": 322
+        },
+        "absRect": {
+          "x": 61,
+          "y": -205,
+          "width": 619,
+          "height": 322
+        },
+        "visible": true,
+        "included": true,
+        "containerRole": "content",
+        "layout": {
+          "mode": "absolute"
+        },
+        "organizeHint": "主內容層：絕對定位保留 Figma 圖層順序",
+        "children": [
+          {
+            "figmaId": "vc_panel_toggle",
+            "name": "panel_toggle",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 168,
+              "y": 0,
+              "width": 349,
+              "height": 64
+            },
+            "absRect": {
+              "x": 229,
+              "y": -205,
+              "width": 349,
+              "height": 64
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "header",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "頂部切換列：左右 toggle 與背景",
+            "children": [
+              {
+                "figmaId": "31:281",
+                "name": "right_toggle_name",
+                "figmaType": "TEXT",
+                "type": "label",
+                "rect": {
+                  "x": 142,
+                  "y": 12,
+                  "width": 207,
+                  "height": 39
+                },
+                "absRect": {
+                  "x": 371,
+                  "y": -193,
+                  "width": 207,
+                  "height": 39
+                },
+                "text": "11111",
+                "textColor": "#000000",
+                "fontSize": 12,
+                "visible": true,
+                "included": true,
+                "organizeHint": "右側切換文字",
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                },
+                "widget": {
+                  "top": 0.049,
+                  "left": 0.537
+                }
+              },
+              {
+                "figmaId": "27:260",
+                "name": "left_toggle_name",
+                "figmaType": "TEXT",
+                "type": "label",
+                "rect": {
+                  "x": 54,
+                  "y": 12,
+                  "width": 207,
+                  "height": 39
+                },
+                "absRect": {
+                  "x": 283,
+                  "y": -193,
+                  "width": 207,
+                  "height": 39
+                },
+                "text": "11111",
+                "textColor": "#000000",
+                "fontSize": 12,
+                "visible": true,
+                "included": true,
+                "organizeHint": "左側切換文字",
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                },
+                "widget": {
+                  "top": 0.049,
+                  "left": 0.363
+                }
+              },
+              {
+                "figmaId": "31:279",
+                "name": "left_toggle",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 54,
+                  "y": 12,
+                  "width": 41,
+                  "height": 40
+                },
+                "absRect": {
+                  "x": 283,
+                  "y": -193,
+                  "width": 41,
+                  "height": 40
+                },
+                "asset": "textures/page_1/left_toggle.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "左側切換按鈕",
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                },
+                "widget": {
+                  "top": 0.049,
+                  "left": 0.363
+                }
+              },
+              {
+                "figmaId": "31:277",
+                "name": "right_toggle",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 138,
+                  "y": 12,
+                  "width": 41,
+                  "height": 40
+                },
+                "absRect": {
+                  "x": 367,
+                  "y": -193,
+                  "width": 41,
+                  "height": 40
+                },
+                "asset": "textures/page_1/right_toggle.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "右側切換按鈕",
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                },
+                "widget": {
+                  "top": 0.049,
+                  "left": 0.485
+                }
+              },
+              {
+                "figmaId": "27:256",
+                "name": "panel_toggle_bg",
+                "figmaType": "RECTANGLE",
+                "type": "panel",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 246,
+                  "height": 64
+                },
+                "absRect": {
+                  "x": 229,
+                  "y": -205,
+                  "width": 246,
+                  "height": 64
+                },
+                "asset": "textures/page_1/panel_toggle_bg.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "頂部切換列背景",
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                },
+                "widget": {
+                  "top": 0.024,
+                  "left": 0.285,
+                  "right": 0.357
+                }
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_message_list",
+            "name": "message_list",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 355,
+              "y": 209,
+              "width": 264,
+              "height": 113
+            },
+            "absRect": {
+              "x": 416,
+              "y": 4,
+              "width": 264,
+              "height": 113
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "list",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "右側訊息列表",
+            "children": [
+              {
+                "figmaId": "vc_message_item_01",
+                "name": "message_item_01",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 264,
+                  "height": 57
+                },
+                "absRect": {
+                  "x": 416,
+                  "y": 4,
+                  "width": 264,
+                  "height": 57
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "content",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "訊息列01：文字 + 確認按鈕 + 背景",
+                "children": [
+                  {
+                    "figmaId": "27:264",
+                    "name": "message_text",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 0,
+                      "y": 9,
+                      "width": 168,
+                      "height": 39
+                    },
+                    "absRect": {
+                      "x": 416,
+                      "y": 13,
+                      "width": 168,
+                      "height": 39
+                    },
+                    "text": "11111",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "訊息列01文字",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.482,
+                      "left": 0.556
+                    }
+                  },
+                  {
+                    "figmaId": "31:275",
+                    "name": "confirm_btn_1",
+                    "figmaType": "RECTANGLE",
+                    "type": "sprite",
+                    "rect": {
+                      "x": 214,
+                      "y": 8,
+                      "width": 41,
+                      "height": 40
+                    },
+                    "absRect": {
+                      "x": 630,
+                      "y": 12,
+                      "width": 41,
+                      "height": 40
+                    },
+                    "asset": "textures/page_1/confirm_btn_1.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "訊息列01確認按鈕",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.479,
+                      "right": 0.029
+                    }
+                  },
+                  {
+                    "figmaId": "27:251",
+                    "name": "message",
+                    "figmaType": "RECTANGLE",
+                    "type": "sprite",
+                    "rect": {
+                      "x": 7,
+                      "y": 0,
+                      "width": 257,
+                      "height": 57
+                    },
+                    "absRect": {
+                      "x": 423,
+                      "y": 4,
+                      "width": 257,
+                      "height": 57
+                    },
+                    "asset": "textures/page_1/message.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "訊息列01背景",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.463,
+                      "left": 0.566
+                    }
+                  }
+                ]
+              },
+              {
+                "figmaId": "vc_message_item_02",
+                "name": "message_item_02",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 0,
+                  "y": 64,
+                  "width": 264,
+                  "height": 49
+                },
+                "absRect": {
+                  "x": 416,
+                  "y": 68,
+                  "width": 264,
+                  "height": 49
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "content",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "訊息列02：文字 + 確認按鈕 + 背景",
+                "children": [
+                  {
+                    "figmaId": "27:252",
+                    "name": "message_text",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 0,
+                      "y": 5,
+                      "width": 168,
+                      "height": 39
+                    },
+                    "absRect": {
+                      "x": 416,
+                      "y": 73,
+                      "width": 168,
+                      "height": 39
+                    },
+                    "text": "11111",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "訊息列02文字",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.606,
+                      "left": 0.556
+                    }
+                  },
+                  {
+                    "figmaId": "31:274",
+                    "name": "comfirm_btn_2",
+                    "figmaType": "RECTANGLE",
+                    "type": "sprite",
+                    "rect": {
+                      "x": 214,
+                      "y": 5,
+                      "width": 41,
+                      "height": 40
+                    },
+                    "absRect": {
+                      "x": 630,
+                      "y": 73,
+                      "width": 41,
+                      "height": 40
+                    },
+                    "asset": "textures/page_1/comfirm_btn_2.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "訊息列02確認按鈕",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.604,
+                      "right": 0.029
+                    }
+                  },
+                  {
+                    "figmaId": "27:262",
+                    "name": "message",
+                    "figmaType": "RECTANGLE",
+                    "type": "sprite",
+                    "rect": {
+                      "x": 7,
+                      "y": 0,
+                      "width": 257,
+                      "height": 49
+                    },
+                    "absRect": {
+                      "x": 423,
+                      "y": 68,
+                      "width": 257,
+                      "height": 49
+                    },
+                    "asset": "textures/page_1/message.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "訊息列02背景",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.597,
+                      "left": 0.566
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_panel_title",
+            "name": "panel_title",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 355,
+              "y": 105,
+              "width": 246,
+              "height": 47
+            },
+            "absRect": {
+              "x": 416,
+              "y": -100,
+              "width": 246,
+              "height": 47
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "header",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "右側標題列",
+            "children": [
+              {
+                "figmaId": "27:247",
+                "name": "title",
+                "figmaType": "TEXT",
+                "type": "label",
+                "rect": {
+                  "x": 0,
+                  "y": 8,
+                  "width": 246,
+                  "height": 39
+                },
+                "absRect": {
+                  "x": 416,
+                  "y": -92,
+                  "width": 246,
+                  "height": 39
+                },
+                "text": "11111",
+                "textColor": "#000000",
+                "fontSize": 12,
+                "visible": true,
+                "included": true,
+                "organizeHint": "標題文字",
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                },
+                "widget": {
+                  "top": 0.269,
+                  "left": 0.556
+                }
+              },
+              {
+                "figmaId": "27:245",
+                "name": "panel_title_bg",
+                "figmaType": "RECTANGLE",
+                "type": "panel",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 246,
+                  "height": 40
+                },
+                "absRect": {
+                  "x": 416,
+                  "y": -100,
+                  "width": 246,
+                  "height": 40
+                },
+                "asset": "textures/page_1/panel_title_bg.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "標題列背景",
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                },
+                "widget": {
+                  "top": 0.252,
+                  "left": 0.556
+                }
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_tab_group",
+            "name": "tab_group",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 0,
+              "y": 84,
+              "width": 109,
+              "height": 146
+            },
+            "absRect": {
+              "x": 61,
+              "y": -121,
+              "width": 109,
+              "height": 146
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "list",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "左側垂直分頁群組",
+            "children": [
+              {
+                "figmaId": "vc_tab_item_01",
+                "name": "tab_item_01",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 109,
+                  "height": 41
+                },
+                "absRect": {
+                  "x": 61,
+                  "y": -121,
+                  "width": 109,
+                  "height": 41
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "content",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "分頁列01（y=-121）",
+                "children": [
+                  {
+                    "figmaId": "27:234",
+                    "name": "title_name",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 8,
+                      "y": 2,
+                      "width": 96,
+                      "height": 39
+                    },
+                    "absRect": {
+                      "x": 69,
+                      "y": -119,
+                      "width": 96,
+                      "height": 39
+                    },
+                    "text": "11111",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "分頁項目01文字",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.205,
+                      "left": 0.053
+                    }
+                  },
+                  {
+                    "figmaId": "27:233",
+                    "name": "tab",
+                    "figmaType": "RECTANGLE",
+                    "type": "sprite",
+                    "rect": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 109,
+                      "height": 40
+                    },
+                    "absRect": {
+                      "x": 61,
+                      "y": -121,
+                      "width": 109,
+                      "height": 40
+                    },
+                    "asset": "textures/page_1/tab.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "分頁項目01背景",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.205,
+                      "left": 0.042
+                    }
+                  }
+                ]
+              },
+              {
+                "figmaId": "vc_tab_item_03",
+                "name": "tab_item_03",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 0,
+                  "y": 106,
+                  "width": 109,
+                  "height": 40
+                },
+                "absRect": {
+                  "x": 61,
+                  "y": -15,
+                  "width": 109,
+                  "height": 40
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "content",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "分頁列03（y=-15）",
+                "children": [
+                  {
+                    "figmaId": "27:243",
+                    "name": "title_name",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 8,
+                      "y": 1,
+                      "width": 96,
+                      "height": 39
+                    },
+                    "absRect": {
+                      "x": 69,
+                      "y": -14,
+                      "width": 96,
+                      "height": 39
+                    },
+                    "text": "11111",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "分頁項目03文字",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.427,
+                      "left": 0.053
+                    }
+                  },
+                  {
+                    "figmaId": "27:242",
+                    "name": "tab",
+                    "figmaType": "RECTANGLE",
+                    "type": "sprite",
+                    "rect": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 109,
+                      "height": 40
+                    },
+                    "absRect": {
+                      "x": 61,
+                      "y": -15,
+                      "width": 109,
+                      "height": 40
+                    },
+                    "asset": "textures/page_1/tab.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "分頁項目03背景",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.427,
+                      "left": 0.042
+                    }
+                  }
+                ]
+              },
+              {
+                "figmaId": "vc_tab_item_02",
+                "name": "tab_item_02",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 0,
+                  "y": 53,
+                  "width": 109,
+                  "height": 40
+                },
+                "absRect": {
+                  "x": 61,
+                  "y": -68,
+                  "width": 109,
+                  "height": 40
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "content",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "分頁列02（y=-68）",
+                "children": [
+                  {
+                    "figmaId": "27:240",
+                    "name": "title_name",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 8,
+                      "y": 0,
+                      "width": 96,
+                      "height": 39
+                    },
+                    "absRect": {
+                      "x": 69,
+                      "y": -68,
+                      "width": 96,
+                      "height": 39
+                    },
+                    "text": "11111",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "分頁項目02文字",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.316,
+                      "left": 0.053
+                    }
+                  },
+                  {
+                    "figmaId": "27:239",
+                    "name": "tab",
+                    "figmaType": "RECTANGLE",
+                    "type": "sprite",
+                    "rect": {
+                      "x": 0,
+                      "y": 0,
+                      "width": 109,
+                      "height": 40
+                    },
+                    "absRect": {
+                      "x": 61,
+                      "y": -68,
+                      "width": 109,
+                      "height": 40
+                    },
+                    "asset": "textures/page_1/tab.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "分頁項目02背景",
+                    "children": [],
+                    "containerRole": "content",
+                    "layout": {
+                      "mode": "none"
+                    },
+                    "widget": {
+                      "top": 0.316,
+                      "left": 0.042
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "organizedBy": "cursor-agent",
+  "agentSummary": "依示意圖將雙面板背景、頂部切換、左側分頁、標題列與訊息列分組至虛擬容器，保留所有 leaf absRect 不變"
+}

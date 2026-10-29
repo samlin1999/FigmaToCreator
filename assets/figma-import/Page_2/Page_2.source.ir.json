@@ -1,0 +1,855 @@
+{
+  "version": "1.0",
+  "scope": "page",
+  "preserveVisual": true,
+  "source": {
+    "fileKey": "local",
+    "fileName": "Untitled",
+    "pageId": "37:380",
+    "pageName": "Page 2",
+    "exportedAt": "2026-06-18T07:00:00.349Z"
+  },
+  "designSize": {
+    "width": 688,
+    "height": 488.31085205078125
+  },
+  "root": {
+    "figmaId": "37:380",
+    "name": "Page 2",
+    "figmaType": "PAGE",
+    "type": "page",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 688,
+      "height": 488.31085205078125
+    },
+    "absRect": {
+      "x": -259,
+      "y": -216.8463897705078,
+      "width": 688,
+      "height": 488.31085205078125
+    },
+    "visible": true,
+    "included": true,
+    "organizeHint": "Page 根節點（內容邊界，不改變子節點位置）",
+    "children": [
+      {
+        "figmaId": "37:448",
+        "name": "Rectangle 20",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 378,
+          "y": 107.84638977050781,
+          "width": 50,
+          "height": 40
+        },
+        "absRect": {
+          "x": 119,
+          "y": -109,
+          "width": 50,
+          "height": 40
+        },
+        "asset": "textures/page_2/rectangle_20.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 33,
+        "children": []
+      },
+      {
+        "figmaId": "37:428",
+        "name": "Rectangle 16",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 160,
+          "y": 105.84638977050781,
+          "width": 45,
+          "height": 42
+        },
+        "absRect": {
+          "x": -99,
+          "y": -111,
+          "width": 45,
+          "height": 42
+        },
+        "asset": "textures/page_2/rectangle_16.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 32,
+        "children": []
+      },
+      {
+        "figmaId": "37:427",
+        "name": "Rectangle 15",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 90,
+          "y": 105.84638977050781,
+          "width": 45,
+          "height": 42
+        },
+        "absRect": {
+          "x": -169,
+          "y": -111,
+          "width": 45,
+          "height": 42
+        },
+        "asset": "textures/page_2/rectangle_15.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 31,
+        "children": []
+      },
+      {
+        "figmaId": "37:443",
+        "name": "10000",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 419,
+          "y": 174.8463897705078,
+          "width": 36,
+          "height": 15
+        },
+        "absRect": {
+          "x": 160,
+          "y": -42,
+          "width": 36,
+          "height": 15
+        },
+        "text": "10000",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 30,
+        "children": []
+      },
+      {
+        "figmaId": "37:442",
+        "name": "1000000",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 129,
+          "y": 174.8463897705078,
+          "width": 51,
+          "height": 15
+        },
+        "absRect": {
+          "x": -130,
+          "y": -42,
+          "width": 51,
+          "height": 15
+        },
+        "text": "1000000",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 29,
+        "children": []
+      },
+      {
+        "figmaId": "74:56",
+        "name": "Group 2",
+        "figmaType": "GROUP",
+        "type": "group",
+        "rect": {
+          "x": 259,
+          "y": 216.8463897705078,
+          "width": 0,
+          "height": 0
+        },
+        "absRect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "visible": true,
+        "included": true,
+        "organizeHint": "保留原始 Group 階層",
+        "paintOrder": 25,
+        "children": [
+          {
+            "figmaId": "37:441",
+            "name": "s",
+            "figmaType": "TEXT",
+            "type": "label",
+            "rect": {
+              "x": 367,
+              "y": -106,
+              "width": 7,
+              "height": 15
+            },
+            "absRect": {
+              "x": 367,
+              "y": -106,
+              "width": 7,
+              "height": 15
+            },
+            "text": "s",
+            "textColor": "#000000",
+            "fontSize": 12,
+            "visible": false,
+            "included": true,
+            "organizeHint": "語意：Label（Figma TEXT）",
+            "paintOrder": 28,
+            "children": []
+          },
+          {
+            "figmaId": "37:440",
+            "name": "s",
+            "figmaType": "TEXT",
+            "type": "label",
+            "rect": {
+              "x": 304,
+              "y": -106,
+              "width": 7,
+              "height": 15
+            },
+            "absRect": {
+              "x": 304,
+              "y": -106,
+              "width": 7,
+              "height": 15
+            },
+            "text": "s",
+            "textColor": "#000000",
+            "fontSize": 12,
+            "visible": false,
+            "included": true,
+            "organizeHint": "語意：Label（Figma TEXT）",
+            "paintOrder": 27,
+            "children": []
+          },
+          {
+            "figmaId": "37:439",
+            "name": "s",
+            "figmaType": "TEXT",
+            "type": "label",
+            "rect": {
+              "x": 231,
+              "y": -109,
+              "width": 7,
+              "height": 15
+            },
+            "absRect": {
+              "x": 231,
+              "y": -109,
+              "width": 7,
+              "height": 15
+            },
+            "text": "s",
+            "textColor": "#000000",
+            "fontSize": 12,
+            "visible": false,
+            "included": true,
+            "organizeHint": "語意：Label（Figma TEXT）",
+            "paintOrder": 26,
+            "children": []
+          }
+        ]
+      },
+      {
+        "figmaId": "37:438",
+        "name": "7",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 623,
+          "y": 440.8463897705078,
+          "width": 7,
+          "height": 15
+        },
+        "absRect": {
+          "x": 364,
+          "y": 224,
+          "width": 7,
+          "height": 15
+        },
+        "text": "7",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 24,
+        "children": []
+      },
+      {
+        "figmaId": "37:437",
+        "name": "6",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 495,
+          "y": 428.8463897705078,
+          "width": 8,
+          "height": 15
+        },
+        "absRect": {
+          "x": 236,
+          "y": 212,
+          "width": 8,
+          "height": 15
+        },
+        "text": "6",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 23,
+        "children": []
+      },
+      {
+        "figmaId": "37:436",
+        "name": "5",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 433,
+          "y": 429.8463897705078,
+          "width": 8,
+          "height": 15
+        },
+        "absRect": {
+          "x": 174,
+          "y": 213,
+          "width": 8,
+          "height": 15
+        },
+        "text": "5",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 22,
+        "children": []
+      },
+      {
+        "figmaId": "37:435",
+        "name": "4",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 374,
+          "y": 433.8463897705078,
+          "width": 8,
+          "height": 15
+        },
+        "absRect": {
+          "x": 115,
+          "y": 217,
+          "width": 8,
+          "height": 15
+        },
+        "text": "4",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 21,
+        "children": []
+      },
+      {
+        "figmaId": "37:434",
+        "name": "3",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 312,
+          "y": 430.8463897705078,
+          "width": 8,
+          "height": 15
+        },
+        "absRect": {
+          "x": 53,
+          "y": 214,
+          "width": 8,
+          "height": 15
+        },
+        "text": "3",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 20,
+        "children": []
+      },
+      {
+        "figmaId": "37:433",
+        "name": "2",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 255,
+          "y": 434.8463897705078,
+          "width": 8,
+          "height": 15
+        },
+        "absRect": {
+          "x": -4,
+          "y": 218,
+          "width": 8,
+          "height": 15
+        },
+        "text": "2",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 19,
+        "children": []
+      },
+      {
+        "figmaId": "37:432",
+        "name": "1",
+        "figmaType": "TEXT",
+        "type": "label",
+        "rect": {
+          "x": 119,
+          "y": 446.8463897705078,
+          "width": 6,
+          "height": 15
+        },
+        "absRect": {
+          "x": -140,
+          "y": 230,
+          "width": 6,
+          "height": 15
+        },
+        "text": "1",
+        "textColor": "#000000",
+        "fontSize": 12,
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Label（Figma TEXT）",
+        "paintOrder": 18,
+        "children": []
+      },
+      {
+        "figmaId": "37:446",
+        "name": "Rectangle 19",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 497,
+          "y": 160.8463897705078,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 238,
+          "y": -56,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_19.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 17,
+        "children": []
+      },
+      {
+        "figmaId": "37:444",
+        "name": "Rectangle 18",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 320,
+          "y": 160.8463897705078,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 61,
+          "y": -56,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_18.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 16,
+        "children": []
+      },
+      {
+        "figmaId": "37:419",
+        "name": "Rectangle 11",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 303,
+          "y": 162.8463897705078,
+          "width": 250,
+          "height": 43
+        },
+        "absRect": {
+          "x": 44,
+          "y": -54,
+          "width": 250,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_11.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 15,
+        "children": []
+      },
+      {
+        "figmaId": "37:430",
+        "name": "Rectangle 17",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 233,
+          "y": 104.84638977050781,
+          "width": 128,
+          "height": 43
+        },
+        "absRect": {
+          "x": -26,
+          "y": -112,
+          "width": 128,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_17.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 14,
+        "children": []
+      },
+      {
+        "figmaId": "37:418",
+        "name": "Rectangle 10",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 96,
+          "y": 162.8463897705078,
+          "width": 128,
+          "height": 43
+        },
+        "absRect": {
+          "x": -163,
+          "y": -54,
+          "width": 128,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_10.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 13,
+        "children": []
+      },
+      {
+        "figmaId": "37:408",
+        "name": "Rectangle 5",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 297,
+          "y": 417.8463897705078,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 38,
+          "y": 201,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_5.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 12,
+        "children": []
+      },
+      {
+        "figmaId": "37:410",
+        "name": "Rectangle 6",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 357,
+          "y": 417.8463897705078,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 98,
+          "y": 201,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_6.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 11,
+        "children": []
+      },
+      {
+        "figmaId": "37:412",
+        "name": "Rectangle 7",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 417,
+          "y": 417.8463897705078,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 158,
+          "y": 201,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_7.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 10,
+        "children": []
+      },
+      {
+        "figmaId": "37:414",
+        "name": "Rectangle 8",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 477,
+          "y": 417.8463897705078,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 218,
+          "y": 201,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_8.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 9,
+        "children": []
+      },
+      {
+        "figmaId": "37:421",
+        "name": "Rectangle 12",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 471,
+          "y": 97.84638977050781,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 212,
+          "y": -119,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_12.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 8,
+        "children": []
+      },
+      {
+        "figmaId": "37:425",
+        "name": "Rectangle 14",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 605,
+          "y": 97.84638977050781,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 346,
+          "y": -119,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_14.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 7,
+        "children": []
+      },
+      {
+        "figmaId": "37:423",
+        "name": "Rectangle 13",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 542,
+          "y": 97.84638977050781,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 283,
+          "y": -119,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_13.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 6,
+        "children": []
+      },
+      {
+        "figmaId": "37:416",
+        "name": "Rectangle 9",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 599,
+          "y": 428.8463897705078,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": 340,
+          "y": 212,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_9.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 5,
+        "children": []
+      },
+      {
+        "figmaId": "37:407",
+        "name": "Rectangle 4",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 237,
+          "y": 417.8463897705078,
+          "width": 41,
+          "height": 43
+        },
+        "absRect": {
+          "x": -22,
+          "y": 201,
+          "width": 41,
+          "height": 43
+        },
+        "asset": "textures/page_2/rectangle_4.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 4,
+        "children": []
+      },
+      {
+        "figmaId": "37:406",
+        "name": "Rectangle 3",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 224,
+          "y": 433.8463897705078,
+          "width": 314,
+          "height": 38
+        },
+        "absRect": {
+          "x": -35,
+          "y": 217,
+          "width": 314,
+          "height": 38
+        },
+        "asset": "textures/page_2/rectangle_3.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 3,
+        "children": []
+      },
+      {
+        "figmaId": "37:405",
+        "name": "Rectangle 2",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 107,
+          "y": 433.8463897705078,
+          "width": 38,
+          "height": 38
+        },
+        "absRect": {
+          "x": -152,
+          "y": 217,
+          "width": 38,
+          "height": 38
+        },
+        "asset": "textures/page_2/rectangle_2.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 2,
+        "children": []
+      },
+      {
+        "figmaId": "37:404",
+        "name": "背景",
+        "figmaType": "RECTANGLE",
+        "type": "sprite",
+        "rect": {
+          "x": 49,
+          "y": 89.84638977050781,
+          "width": 639,
+          "height": 388
+        },
+        "absRect": {
+          "x": -210,
+          "y": -127,
+          "width": 639,
+          "height": 388
+        },
+        "asset": "textures/page_2/背景.png",
+        "visible": true,
+        "included": true,
+        "organizeHint": "語意：Sprite",
+        "paintOrder": 1,
+        "children": []
+      }
+    ]
+  }
+}

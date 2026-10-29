@@ -1,0 +1,163 @@
+{
+  "summary": "依示意圖將雙面板背景、頂部切換、左側分頁、標題列與訊息列分組至虛擬容器，保留所有 leaf absRect 不變",
+  "organizer": "cursor-agent",
+  "virtualRoot": {
+    "children": [
+      "vc_background",
+      "vc_content"
+    ]
+  },
+  "virtualContainers": [
+    {
+      "id": "vc_background",
+      "name": "BackgroundLayer",
+      "containerRole": "background",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "4:6",
+        "27:229"
+      ],
+      "organizeHint": "雙面板背景層（右側主面板 + 左側分頁區）"
+    },
+    {
+      "id": "vc_content",
+      "name": "ContentRoot",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "vc_panel_toggle",
+        "vc_message_list",
+        "vc_panel_title",
+        "vc_tab_group"
+      ],
+      "organizeHint": "主內容層：絕對定位保留 Figma 圖層順序"
+    },
+    {
+      "id": "vc_panel_toggle",
+      "name": "panel_toggle",
+      "containerRole": "header",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "31:281",
+        "27:260",
+        "31:279",
+        "31:277",
+        "27:256"
+      ],
+      "organizeHint": "頂部切換列：左右 toggle 與背景"
+    },
+    {
+      "id": "vc_tab_group",
+      "name": "tab_group",
+      "containerRole": "list",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "vc_tab_item_01",
+        "vc_tab_item_03",
+        "vc_tab_item_02"
+      ],
+      "organizeHint": "左側垂直分頁群組"
+    },
+    {
+      "id": "vc_tab_item_01",
+      "name": "tab_item_01",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "27:234",
+        "27:233"
+      ],
+      "organizeHint": "分頁列01（y=-121）"
+    },
+    {
+      "id": "vc_tab_item_02",
+      "name": "tab_item_02",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "27:240",
+        "27:239"
+      ],
+      "organizeHint": "分頁列02（y=-68）"
+    },
+    {
+      "id": "vc_tab_item_03",
+      "name": "tab_item_03",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "27:243",
+        "27:242"
+      ],
+      "organizeHint": "分頁列03（y=-15）"
+    },
+    {
+      "id": "vc_panel_title",
+      "name": "panel_title",
+      "containerRole": "header",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "27:247",
+        "27:245"
+      ],
+      "organizeHint": "右側標題列"
+    },
+    {
+      "id": "vc_message_list",
+      "name": "message_list",
+      "containerRole": "list",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "vc_message_item_01",
+        "vc_message_item_02"
+      ],
+      "organizeHint": "右側訊息列表"
+    },
+    {
+      "id": "vc_message_item_01",
+      "name": "message_item_01",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "27:264",
+        "31:275",
+        "27:251"
+      ],
+      "organizeHint": "訊息列01：文字 + 確認按鈕 + 背景"
+    },
+    {
+      "id": "vc_message_item_02",
+      "name": "message_item_02",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "27:252",
+        "31:274",
+        "27:262"
+      ],
+      "organizeHint": "訊息列02：文字 + 確認按鈕 + 背景"
+    }
+  ]
+}

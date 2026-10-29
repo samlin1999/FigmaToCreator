@@ -1,0 +1,220 @@
+{
+  "summary": "依示意圖 8 圈選區建立語意虛擬容器；全頁背景獨立；Group 2 整組置於右上按鈕區；按鈕區命名含 btn",
+  "organizer": "cursor-agent",
+  "virtualRoot": {
+    "children": [
+      "vc_page_bg",
+      "vc_content_root"
+    ]
+  },
+  "virtualContainers": [
+    {
+      "id": "vc_page_bg",
+      "name": "page_bg",
+      "containerRole": "background",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:404"
+      ],
+      "organizeHint": "全頁灰色背景層"
+    },
+    {
+      "id": "vc_content_root",
+      "name": "content_root",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "vc_btn_footer_right",
+        "vc_bottom_nav_btn_group",
+        "vc_btn_footer_left",
+        "vc_currency_diamond",
+        "vc_currency_gold",
+        "vc_btn_group_header_right",
+        "vc_zone_header_mid",
+        "vc_zone_header_left"
+      ],
+      "organizeHint": "主內容根：8 圈選區（back-first）"
+    },
+    {
+      "id": "vc_zone_header_left",
+      "name": "zone_header_left",
+      "containerRole": "header",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:427",
+        "37:428"
+      ],
+      "organizeHint": "示意圖圈選：左上兩方塊"
+    },
+    {
+      "id": "vc_zone_header_mid",
+      "name": "zone_header_mid",
+      "containerRole": "header",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:430",
+        "37:448"
+      ],
+      "organizeHint": "示意圖圈選：上中藍條+橘方塊"
+    },
+    {
+      "id": "vc_btn_group_header_right",
+      "name": "btn_group_header_right",
+      "containerRole": "header",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:421",
+        "37:423",
+        "37:425",
+        "74:56"
+      ],
+      "organizeHint": "示意圖圈選：右上按鈕區（按鈕）；Group 2 整組不可拆"
+    },
+    {
+      "id": "vc_currency_gold",
+      "name": "currency_gold",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:418",
+        "37:442"
+      ],
+      "organizeHint": "示意圖圈選：中左金幣藍條+1000000"
+    },
+    {
+      "id": "vc_currency_diamond",
+      "name": "currency_diamond",
+      "containerRole": "content",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:419",
+        "37:444",
+        "37:446",
+        "37:443"
+      ],
+      "organizeHint": "示意圖圈選：中右鑽石藍條+綠方塊+10000"
+    },
+    {
+      "id": "vc_btn_footer_left",
+      "name": "btn_footer_left",
+      "containerRole": "footer",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:405",
+        "37:432"
+      ],
+      "organizeHint": "示意圖圈選：左下按鈕 1"
+    },
+    {
+      "id": "vc_bottom_nav_btn_group",
+      "name": "bottom_nav_btn_group",
+      "containerRole": "footer",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:406",
+        "vc_btn_nav_item_01",
+        "vc_btn_nav_item_02",
+        "vc_btn_nav_item_03",
+        "vc_btn_nav_item_04",
+        "vc_btn_nav_item_05"
+      ],
+      "organizeHint": "示意圖圈選：下中導覽列紅條+按鈕 2-6"
+    },
+    {
+      "id": "vc_btn_nav_item_01",
+      "name": "btn_nav_item_01",
+      "containerRole": "footer",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:407",
+        "37:433"
+      ],
+      "organizeHint": "按鈕：導覽 2"
+    },
+    {
+      "id": "vc_btn_nav_item_02",
+      "name": "btn_nav_item_02",
+      "containerRole": "footer",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:408",
+        "37:434"
+      ],
+      "organizeHint": "按鈕：導覽 3"
+    },
+    {
+      "id": "vc_btn_nav_item_03",
+      "name": "btn_nav_item_03",
+      "containerRole": "footer",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:410",
+        "37:435"
+      ],
+      "organizeHint": "按鈕：導覽 4"
+    },
+    {
+      "id": "vc_btn_nav_item_04",
+      "name": "btn_nav_item_04",
+      "containerRole": "footer",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:412",
+        "37:436"
+      ],
+      "organizeHint": "按鈕：導覽 5"
+    },
+    {
+      "id": "vc_btn_nav_item_05",
+      "name": "btn_nav_item_05",
+      "containerRole": "footer",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:414",
+        "37:437"
+      ],
+      "organizeHint": "按鈕：導覽 6"
+    },
+    {
+      "id": "vc_btn_footer_right",
+      "name": "btn_footer_right",
+      "containerRole": "footer",
+      "layout": {
+        "mode": "absolute"
+      },
+      "children": [
+        "37:416",
+        "37:438"
+      ],
+      "organizeHint": "示意圖圈選：右下按鈕 7"
+    }
+  ]
+}

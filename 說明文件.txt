@@ -1,0 +1,45 @@
+請先下載以下軟體:
+Node.js 版本號 >= 18
+Figma Desktop
+Cocos Creator 3.8.8
+Cursor(需有方案、帳密)
+
+先去網站
+https://cursor.com/zh-Hant/dashboard/integrations
+點擊加入下方的User API Keys
+複製API Key貼到FigmaToCreator/tools/ai-organizer/.env中
+
+安裝Figma插件:
+page點右鍵-> Plugins -> Development -> Manage plugins in development -> import from manifest
+點選FigmaToCreator/tools/figma-plugin/manifest.json 
+
+安裝Creator插件:
+進入Cocos Creator編輯器點選上方extension -> Extension Manager
+點擊 Installed -> 開啟插件
+
+環境建置:
+1. 點擊Creator專案中的"FigmaToCreator/初始環境建置.bat"(只有初次建置環境才要)
+2. 點擊Creator專案中的"FigmaToCreator/開啟連線.bat"
+
+Figma 插件操作介面:
+用ctrl+k -> FigmaToCreator、下方面版的Action -> FigmaToCreator或右鍵-> Plugins -> Development -> FigmaToCreator都可開啟操作介面
+1. AI整理流程(需開啟連線)
+拖曳page進行解析->載入示意圖或複製示意圖 -> 可以加入自己想要的規則給AI進行參考 -> 確認後點擊AI整理並預覽 -> 整理後會更新節點樹，可點擊"確認並匯出"或"還原" -> 匯出會直接儲存到cocos creator專案中
+2. 離線整理流程(不須連線)
+拖曳page進行解析->直接點擊離線整理 -> 整理後會更新節點樹，可點擊"確認並匯出"或"還原" -> 匯出會直接儲存到cocos creator專案中
+3. 一鍵執行
+在拖曳page進行解析後可使用，配置好後能加快對應流程
+注意:用AI整理需載入示意圖
+
+Creator插件使用:
+點選編輯器上方FigmaToCreator-> 從IR 產生 Prefab -> 選取要產生的page ir.json
+
+清除暫存:
+呼叫 Cursor SDK時都可能建立新的 agent session，SDK 會把每個 session 的本地狀態儲存。
+點擊"cleanup-cursor-sdk-state.bat"，會清除暫存檔案。可釋放一定的空間。
+
+注意事項:
+盡量不要對已經帶有[FTC]前綴的節點進行整理，整理品質會下降。若真的想對該節點整理，請手動重命名移除前綴。
+若要進行重新整理，盡量先還原為整理前，之後再次整理，品質會比較穩定。
+
+需要手把手教學、操作說明可到此查看(附圖): https://hackmd.io/@IlyM5FeyRVWE6otJ_3JEhA/Bk1A0VSlzl

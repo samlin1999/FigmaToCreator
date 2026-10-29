@@ -1,0 +1,13 @@
+{
+  "name": "figma-to-creator-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/code.ts --bundle --outfile=dist/code.js --target=es2017 && node scripts/copy-ui.js"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.99.0",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.4.5"
+  }
+}

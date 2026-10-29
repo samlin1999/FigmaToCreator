@@ -1,0 +1,1390 @@
+{
+  "version": "1.0",
+  "scope": "page",
+  "preserveVisual": true,
+  "source": {
+    "fileKey": "local",
+    "fileName": "Untitled",
+    "pageId": "37:380",
+    "pageName": "Page 2",
+    "exportedAt": "2026-06-18T07:00:00.349Z"
+  },
+  "designSize": {
+    "width": 688,
+    "height": 488.31085205078125
+  },
+  "root": {
+    "figmaId": "37:380",
+    "name": "Page 2",
+    "figmaType": "PAGE",
+    "type": "page",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 688,
+      "height": 488.31085205078125
+    },
+    "absRect": {
+      "x": -259,
+      "y": -216.8463897705078,
+      "width": 688,
+      "height": 488.31085205078125
+    },
+    "visible": true,
+    "included": true,
+    "organizeHint": "Page 根節點（內容邊界，不改變子節點位置）",
+    "children": [
+      {
+        "figmaId": "vc_page_bg",
+        "name": "page_bg",
+        "figmaType": "VIRTUAL",
+        "type": "container",
+        "rect": {
+          "x": 49,
+          "y": 89.84638977050781,
+          "width": 639,
+          "height": 388
+        },
+        "absRect": {
+          "x": -210,
+          "y": -127,
+          "width": 639,
+          "height": 388
+        },
+        "visible": true,
+        "included": true,
+        "containerRole": "background",
+        "layout": {
+          "mode": "absolute"
+        },
+        "organizeHint": "全頁灰色背景層",
+        "children": [
+          {
+            "figmaId": "37:404",
+            "name": "page_bg_01",
+            "figmaType": "RECTANGLE",
+            "type": "sprite",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 639,
+              "height": 388
+            },
+            "absRect": {
+              "x": -210,
+              "y": -127,
+              "width": 639,
+              "height": 388
+            },
+            "asset": "textures/page_2/背景.png",
+            "visible": true,
+            "included": true,
+            "organizeHint": "全頁背景（原名：背景）",
+            "paintOrder": 1,
+            "children": [],
+            "containerRole": "background",
+            "layout": {
+              "mode": "none"
+            }
+          }
+        ]
+      },
+      {
+        "figmaId": "vc_content_root",
+        "name": "content_root",
+        "figmaType": "VIRTUAL",
+        "type": "container",
+        "rect": {
+          "x": 90,
+          "y": 97.84638977050781,
+          "width": 559.5,
+          "height": 385
+        },
+        "absRect": {
+          "x": -169,
+          "y": -119,
+          "width": 559.5,
+          "height": 385
+        },
+        "visible": true,
+        "included": true,
+        "containerRole": "content",
+        "layout": {
+          "mode": "absolute"
+        },
+        "organizeHint": "主內容根：8 圈選區（back-first）",
+        "children": [
+          {
+            "figmaId": "vc_btn_footer_right",
+            "name": "btn_footer_right",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 499.5,
+              "y": 322.5,
+              "width": 60,
+              "height": 60
+            },
+            "absRect": {
+              "x": 330.5,
+              "y": 203.5,
+              "width": 60,
+              "height": 60
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "footer",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "示意圖圈選：右下按鈕 7",
+            "children": [
+              {
+                "figmaId": "37:416",
+                "name": "btn_footer_right_01",
+                "figmaType": "RECTANGLE",
+                "type": "button",
+                "rect": {
+                  "x": 9.5,
+                  "y": 8.5,
+                  "width": 41,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": 340,
+                  "y": 212,
+                  "width": 41,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_9.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "按鈕：右下 Rectangle 9",
+                "paintOrder": 5,
+                "children": [],
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:438",
+                "name": "label_btn_footer_right_01",
+                "figmaType": "TEXT",
+                "type": "label",
+                "rect": {
+                  "x": 33.5,
+                  "y": 20.5,
+                  "width": 7,
+                  "height": 15
+                },
+                "absRect": {
+                  "x": 364,
+                  "y": 224,
+                  "width": 7,
+                  "height": 15
+                },
+                "text": "7",
+                "textColor": "#000000",
+                "fontSize": 12,
+                "visible": true,
+                "included": true,
+                "organizeHint": "按鈕：右下 7",
+                "paintOrder": 24,
+                "children": [],
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "none"
+                }
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_bottom_nav_btn_group",
+            "name": "bottom_nav_btn_group",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 134,
+              "y": 311.5,
+              "width": 314,
+              "height": 62.5
+            },
+            "absRect": {
+              "x": -35,
+              "y": 192.5,
+              "width": 314,
+              "height": 62.5
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "footer",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "示意圖圈選：下中導覽列紅條+按鈕 2-6",
+            "children": [
+              {
+                "figmaId": "37:406",
+                "name": "btn_nav_bar_bg_01",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 0,
+                  "y": 24.5,
+                  "width": 314,
+                  "height": 38
+                },
+                "absRect": {
+                  "x": -35,
+                  "y": 217,
+                  "width": 314,
+                  "height": 38
+                },
+                "asset": "textures/page_2/rectangle_3.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "按鈕：下中導覽列 Rectangle 3 紅條背景",
+                "paintOrder": 3,
+                "children": [],
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "vc_btn_nav_item_01",
+                "name": "btn_nav_item_01",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 3.5,
+                  "y": 0,
+                  "width": 60,
+                  "height": 60
+                },
+                "absRect": {
+                  "x": -31.5,
+                  "y": 192.5,
+                  "width": 60,
+                  "height": 60
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "按鈕：導覽 2",
+                "children": [
+                  {
+                    "figmaId": "37:407",
+                    "name": "btn_nav_01",
+                    "figmaType": "RECTANGLE",
+                    "type": "button",
+                    "rect": {
+                      "x": 9.5,
+                      "y": 8.5,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "absRect": {
+                      "x": -22,
+                      "y": 201,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "asset": "textures/page_2/rectangle_4.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 Rectangle 4",
+                    "paintOrder": 4,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  },
+                  {
+                    "figmaId": "37:433",
+                    "name": "label_btn_nav_01",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 27.5,
+                      "y": 25.5,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "absRect": {
+                      "x": -4,
+                      "y": 218,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "text": "2",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 2",
+                    "paintOrder": 19,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  }
+                ]
+              },
+              {
+                "figmaId": "vc_btn_nav_item_02",
+                "name": "btn_nav_item_02",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 63.5,
+                  "y": 0,
+                  "width": 60,
+                  "height": 60
+                },
+                "absRect": {
+                  "x": 28.5,
+                  "y": 192.5,
+                  "width": 60,
+                  "height": 60
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "按鈕：導覽 3",
+                "children": [
+                  {
+                    "figmaId": "37:408",
+                    "name": "btn_nav_02",
+                    "figmaType": "RECTANGLE",
+                    "type": "button",
+                    "rect": {
+                      "x": 9.5,
+                      "y": 8.5,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "absRect": {
+                      "x": 38,
+                      "y": 201,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "asset": "textures/page_2/rectangle_5.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 Rectangle 5",
+                    "paintOrder": 12,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  },
+                  {
+                    "figmaId": "37:434",
+                    "name": "label_btn_nav_02",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 24.5,
+                      "y": 21.5,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "absRect": {
+                      "x": 53,
+                      "y": 214,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "text": "3",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 3",
+                    "paintOrder": 20,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  }
+                ]
+              },
+              {
+                "figmaId": "vc_btn_nav_item_03",
+                "name": "btn_nav_item_03",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 123.5,
+                  "y": 0,
+                  "width": 60,
+                  "height": 60
+                },
+                "absRect": {
+                  "x": 88.5,
+                  "y": 192.5,
+                  "width": 60,
+                  "height": 60
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "按鈕：導覽 4",
+                "children": [
+                  {
+                    "figmaId": "37:410",
+                    "name": "btn_nav_03",
+                    "figmaType": "RECTANGLE",
+                    "type": "button",
+                    "rect": {
+                      "x": 9.5,
+                      "y": 8.5,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "absRect": {
+                      "x": 98,
+                      "y": 201,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "asset": "textures/page_2/rectangle_6.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 Rectangle 6",
+                    "paintOrder": 11,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  },
+                  {
+                    "figmaId": "37:435",
+                    "name": "label_btn_nav_03",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 26.5,
+                      "y": 24.5,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "absRect": {
+                      "x": 115,
+                      "y": 217,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "text": "4",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 4",
+                    "paintOrder": 21,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  }
+                ]
+              },
+              {
+                "figmaId": "vc_btn_nav_item_04",
+                "name": "btn_nav_item_04",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 183.5,
+                  "y": 0,
+                  "width": 60,
+                  "height": 60
+                },
+                "absRect": {
+                  "x": 148.5,
+                  "y": 192.5,
+                  "width": 60,
+                  "height": 60
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "按鈕：導覽 5",
+                "children": [
+                  {
+                    "figmaId": "37:412",
+                    "name": "btn_nav_04",
+                    "figmaType": "RECTANGLE",
+                    "type": "button",
+                    "rect": {
+                      "x": 9.5,
+                      "y": 8.5,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "absRect": {
+                      "x": 158,
+                      "y": 201,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "asset": "textures/page_2/rectangle_7.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 Rectangle 7",
+                    "paintOrder": 10,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  },
+                  {
+                    "figmaId": "37:436",
+                    "name": "label_btn_nav_04",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 25.5,
+                      "y": 20.5,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "absRect": {
+                      "x": 174,
+                      "y": 213,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "text": "5",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 5",
+                    "paintOrder": 22,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  }
+                ]
+              },
+              {
+                "figmaId": "vc_btn_nav_item_05",
+                "name": "btn_nav_item_05",
+                "figmaType": "VIRTUAL",
+                "type": "container",
+                "rect": {
+                  "x": 243.5,
+                  "y": 0,
+                  "width": 60,
+                  "height": 60
+                },
+                "absRect": {
+                  "x": 208.5,
+                  "y": 192.5,
+                  "width": 60,
+                  "height": 60
+                },
+                "visible": true,
+                "included": true,
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "absolute"
+                },
+                "organizeHint": "按鈕：導覽 6",
+                "children": [
+                  {
+                    "figmaId": "37:414",
+                    "name": "btn_nav_05",
+                    "figmaType": "RECTANGLE",
+                    "type": "button",
+                    "rect": {
+                      "x": 9.5,
+                      "y": 8.5,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "absRect": {
+                      "x": 218,
+                      "y": 201,
+                      "width": 41,
+                      "height": 43
+                    },
+                    "asset": "textures/page_2/rectangle_8.png",
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 Rectangle 8",
+                    "paintOrder": 9,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  },
+                  {
+                    "figmaId": "37:437",
+                    "name": "label_btn_nav_05",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 27.5,
+                      "y": 19.5,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "absRect": {
+                      "x": 236,
+                      "y": 212,
+                      "width": 8,
+                      "height": 15
+                    },
+                    "text": "6",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": true,
+                    "included": true,
+                    "organizeHint": "按鈕：下中 6",
+                    "paintOrder": 23,
+                    "children": [],
+                    "containerRole": "footer",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_btn_footer_left",
+            "name": "btn_footer_left",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 6,
+              "y": 325,
+              "width": 60,
+              "height": 60
+            },
+            "absRect": {
+              "x": -163,
+              "y": 206,
+              "width": 60,
+              "height": 60
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "footer",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "示意圖圈選：左下按鈕 1",
+            "children": [
+              {
+                "figmaId": "37:405",
+                "name": "btn_footer_left_01",
+                "figmaType": "RECTANGLE",
+                "type": "button",
+                "rect": {
+                  "x": 11,
+                  "y": 11,
+                  "width": 38,
+                  "height": 38
+                },
+                "absRect": {
+                  "x": -152,
+                  "y": 217,
+                  "width": 38,
+                  "height": 38
+                },
+                "asset": "textures/page_2/rectangle_2.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "按鈕：左下 Rectangle 2",
+                "paintOrder": 2,
+                "children": [],
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:432",
+                "name": "label_btn_footer_left_01",
+                "figmaType": "TEXT",
+                "type": "label",
+                "rect": {
+                  "x": 23,
+                  "y": 24,
+                  "width": 6,
+                  "height": 15
+                },
+                "absRect": {
+                  "x": -140,
+                  "y": 230,
+                  "width": 6,
+                  "height": 15
+                },
+                "text": "1",
+                "textColor": "#000000",
+                "fontSize": 12,
+                "visible": true,
+                "included": true,
+                "organizeHint": "按鈕：左下 1",
+                "paintOrder": 18,
+                "children": [],
+                "containerRole": "footer",
+                "layout": {
+                  "mode": "none"
+                }
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_currency_diamond",
+            "name": "currency_diamond",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 213,
+              "y": 63,
+              "width": 250,
+              "height": 45
+            },
+            "absRect": {
+              "x": 44,
+              "y": -56,
+              "width": 250,
+              "height": 45
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "content",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "示意圖圈選：中右鑽石藍條+綠方塊+10000",
+            "children": [
+              {
+                "figmaId": "37:419",
+                "name": "panel_currency_diamond_bg_01",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 0,
+                  "y": 2,
+                  "width": 250,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": 44,
+                  "y": -54,
+                  "width": 250,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_11.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "currency_diamond：Rectangle 11",
+                "paintOrder": 15,
+                "children": [],
+                "containerRole": "content",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:444",
+                "name": "icon_currency_diamond_01",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 17,
+                  "y": 0,
+                  "width": 41,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": 61,
+                  "y": -56,
+                  "width": 41,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_18.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "currency_diamond：Rectangle 18",
+                "paintOrder": 16,
+                "children": [],
+                "containerRole": "content",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:446",
+                "name": "icon_currency_diamond_02",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 194,
+                  "y": 0,
+                  "width": 41,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": 238,
+                  "y": -56,
+                  "width": 41,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_19.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "currency_diamond：Rectangle 19",
+                "paintOrder": 17,
+                "children": [],
+                "containerRole": "content",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:443",
+                "name": "label_currency_diamond_01",
+                "figmaType": "TEXT",
+                "type": "label",
+                "rect": {
+                  "x": 116,
+                  "y": 14,
+                  "width": 36,
+                  "height": 15
+                },
+                "absRect": {
+                  "x": 160,
+                  "y": -42,
+                  "width": 36,
+                  "height": 15
+                },
+                "text": "10000",
+                "textColor": "#000000",
+                "fontSize": 12,
+                "visible": true,
+                "included": true,
+                "organizeHint": "currency_diamond：10000",
+                "paintOrder": 30,
+                "children": [],
+                "containerRole": "content",
+                "layout": {
+                  "mode": "none"
+                }
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_currency_gold",
+            "name": "currency_gold",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 6,
+              "y": 65,
+              "width": 128,
+              "height": 43
+            },
+            "absRect": {
+              "x": -163,
+              "y": -54,
+              "width": 128,
+              "height": 43
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "content",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "示意圖圈選：中左金幣藍條+1000000",
+            "children": [
+              {
+                "figmaId": "37:418",
+                "name": "panel_currency_gold_bg_01",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 128,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": -163,
+                  "y": -54,
+                  "width": 128,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_10.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "currency_gold：Rectangle 10",
+                "paintOrder": 13,
+                "children": [],
+                "containerRole": "content",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:442",
+                "name": "label_currency_gold_01",
+                "figmaType": "TEXT",
+                "type": "label",
+                "rect": {
+                  "x": 33,
+                  "y": 12,
+                  "width": 51,
+                  "height": 15
+                },
+                "absRect": {
+                  "x": -130,
+                  "y": -42,
+                  "width": 51,
+                  "height": 15
+                },
+                "text": "1000000",
+                "textColor": "#000000",
+                "fontSize": 12,
+                "visible": true,
+                "included": true,
+                "organizeHint": "currency_gold：1000000",
+                "paintOrder": 29,
+                "children": [],
+                "containerRole": "content",
+                "layout": {
+                  "mode": "none"
+                }
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_btn_group_header_right",
+            "name": "btn_group_header_right",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 169,
+              "y": 0,
+              "width": 387,
+              "height": 119
+            },
+            "absRect": {
+              "x": 0,
+              "y": -119,
+              "width": 387,
+              "height": 119
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "header",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "示意圖圈選：右上按鈕區（按鈕）；Group 2 整組不可拆",
+            "children": [
+              {
+                "figmaId": "37:421",
+                "name": "btn_header_right_01",
+                "figmaType": "RECTANGLE",
+                "type": "button",
+                "rect": {
+                  "x": 212,
+                  "y": 0,
+                  "width": 41,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": 212,
+                  "y": -119,
+                  "width": 41,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_12.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "按鈕：右上 Rectangle 12",
+                "paintOrder": 8,
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:423",
+                "name": "btn_header_right_02",
+                "figmaType": "RECTANGLE",
+                "type": "button",
+                "rect": {
+                  "x": 283,
+                  "y": 0,
+                  "width": 41,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": 283,
+                  "y": -119,
+                  "width": 41,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_13.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "按鈕：右上 Rectangle 13",
+                "paintOrder": 6,
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:425",
+                "name": "btn_header_right_03",
+                "figmaType": "RECTANGLE",
+                "type": "button",
+                "rect": {
+                  "x": 346,
+                  "y": 0,
+                  "width": 41,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": 346,
+                  "y": -119,
+                  "width": 41,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_14.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "按鈕：右上 Rectangle 14",
+                "paintOrder": 7,
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "74:56",
+                "name": "Group 2",
+                "figmaType": "GROUP",
+                "type": "group",
+                "rect": {
+                  "x": 0,
+                  "y": 119,
+                  "width": 0,
+                  "height": 0
+                },
+                "absRect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 0,
+                  "height": 0
+                },
+                "visible": true,
+                "included": true,
+                "organizeHint": "保留原始 Group 階層",
+                "paintOrder": 25,
+                "children": [
+                  {
+                    "figmaId": "37:441",
+                    "name": "label_btn_header_right_03",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 367,
+                      "y": -106,
+                      "width": 7,
+                      "height": 15
+                    },
+                    "absRect": {
+                      "x": 367,
+                      "y": -106,
+                      "width": 7,
+                      "height": 15
+                    },
+                    "text": "s",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": false,
+                    "included": true,
+                    "organizeHint": "按鈕：右上 s 標籤 03（Group 2）",
+                    "paintOrder": 28,
+                    "children": [],
+                    "containerRole": "header",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  },
+                  {
+                    "figmaId": "37:440",
+                    "name": "label_btn_header_right_02",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 304,
+                      "y": -106,
+                      "width": 7,
+                      "height": 15
+                    },
+                    "absRect": {
+                      "x": 304,
+                      "y": -106,
+                      "width": 7,
+                      "height": 15
+                    },
+                    "text": "s",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": false,
+                    "included": true,
+                    "organizeHint": "按鈕：右上 s 標籤 02（Group 2）",
+                    "paintOrder": 27,
+                    "children": [],
+                    "containerRole": "header",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  },
+                  {
+                    "figmaId": "37:439",
+                    "name": "label_btn_header_right_01",
+                    "figmaType": "TEXT",
+                    "type": "label",
+                    "rect": {
+                      "x": 231,
+                      "y": -109,
+                      "width": 7,
+                      "height": 15
+                    },
+                    "absRect": {
+                      "x": 231,
+                      "y": -109,
+                      "width": 7,
+                      "height": 15
+                    },
+                    "text": "s",
+                    "textColor": "#000000",
+                    "fontSize": 12,
+                    "visible": false,
+                    "included": true,
+                    "organizeHint": "按鈕：右上 s 標籤 01（Group 2）",
+                    "paintOrder": 26,
+                    "children": [],
+                    "containerRole": "header",
+                    "layout": {
+                      "mode": "none"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_zone_header_mid",
+            "name": "zone_header_mid",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 143,
+              "y": 7,
+              "width": 195,
+              "height": 43
+            },
+            "absRect": {
+              "x": -26,
+              "y": -112,
+              "width": 195,
+              "height": 43
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "header",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "示意圖圈選：上中藍條+橘方塊",
+            "children": [
+              {
+                "figmaId": "37:430",
+                "name": "panel_header_mid_bg_01",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 128,
+                  "height": 43
+                },
+                "absRect": {
+                  "x": -26,
+                  "y": -112,
+                  "width": 128,
+                  "height": 43
+                },
+                "asset": "textures/page_2/rectangle_17.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "zone_header_mid：Rectangle 17 藍條",
+                "paintOrder": 14,
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:448",
+                "name": "icon_header_mid_01",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 145,
+                  "y": 3,
+                  "width": 50,
+                  "height": 40
+                },
+                "absRect": {
+                  "x": 119,
+                  "y": -109,
+                  "width": 50,
+                  "height": 40
+                },
+                "asset": "textures/page_2/rectangle_20.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "zone_header_mid：Rectangle 20 橘方塊",
+                "paintOrder": 33,
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                }
+              }
+            ]
+          },
+          {
+            "figmaId": "vc_zone_header_left",
+            "name": "zone_header_left",
+            "figmaType": "VIRTUAL",
+            "type": "container",
+            "rect": {
+              "x": 0,
+              "y": 8,
+              "width": 115,
+              "height": 42
+            },
+            "absRect": {
+              "x": -169,
+              "y": -111,
+              "width": 115,
+              "height": 42
+            },
+            "visible": true,
+            "included": true,
+            "containerRole": "header",
+            "layout": {
+              "mode": "absolute"
+            },
+            "organizeHint": "示意圖圈選：左上兩方塊",
+            "children": [
+              {
+                "figmaId": "37:427",
+                "name": "icon_header_left_01",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "width": 45,
+                  "height": 42
+                },
+                "absRect": {
+                  "x": -169,
+                  "y": -111,
+                  "width": 45,
+                  "height": 42
+                },
+                "asset": "textures/page_2/rectangle_15.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "zone_header_left：Rectangle 15",
+                "paintOrder": 31,
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                }
+              },
+              {
+                "figmaId": "37:428",
+                "name": "icon_header_left_02",
+                "figmaType": "RECTANGLE",
+                "type": "sprite",
+                "rect": {
+                  "x": 70,
+                  "y": 0,
+                  "width": 45,
+                  "height": 42
+                },
+                "absRect": {
+                  "x": -99,
+                  "y": -111,
+                  "width": 45,
+                  "height": 42
+                },
+                "asset": "textures/page_2/rectangle_16.png",
+                "visible": true,
+                "included": true,
+                "organizeHint": "zone_header_left：Rectangle 16",
+                "paintOrder": 32,
+                "children": [],
+                "containerRole": "header",
+                "layout": {
+                  "mode": "none"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "organizedBy": "cursor-agent",
+  "agentSummary": "依示意圖 8 圈選區建立語意虛擬容器；全頁背景獨立；Group 2 整組置於右上按鈕區；按鈕區命名含 btn"
+}

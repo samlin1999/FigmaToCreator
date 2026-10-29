@@ -1,0 +1,16 @@
+{
+  "name": "FigmaToCreator",
+  "id": "figma-to-creator-organizer",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"],
+    "devAllowedDomains": ["http://localhost:3847"],
+    "reasoning": "開發模式允許 localhost bridge；正式發佈不開放外部網路"
+  },
+  "capabilities": [],
+  "enableProposedApi": false
+}

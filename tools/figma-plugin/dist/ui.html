@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      font: 13px/1.45 Inter, sans-serif;
+      padding: 14px 16px;
+      color: var(--figma-color-text);
+      background: var(--figma-color-bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .app-header { flex-shrink: 0; margin-bottom: 10px; }
+    h1 { font-size: 16px; margin-bottom: 4px; font-weight: 600; }
+    .desc { color: var(--figma-color-text-secondary); margin-bottom: 6px; line-height: 1.5; font-size: 12px; }
+    .section-title { font-size: 11px; font-weight: 600; color: var(--figma-color-text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .app-layout {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .left-panel {
+      flex: 1.65;
+      min-width: 0;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--figma-color-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: var(--figma-color-bg-secondary);
+    }
+    .right-panel {
+      flex: 1;
+      min-width: 340px;
+      max-width: 440px;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 4px;
+    }
+    .tree-body {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .step-guide {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .step-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 8px; border: 1px solid var(--figma-color-border); border-radius: 6px;
+      color: var(--figma-color-text-secondary); background: var(--figma-color-bg-secondary);
+    }
+    .step-item.active { border-color: var(--figma-color-border-brand); color: var(--figma-color-text); background: var(--figma-color-bg-brand-tertiary, #f5f3ff); }
+    .step-item.done { color: var(--figma-color-text); }
+    .step-index {
+      width: 16px; height: 16px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 10px; background: var(--figma-color-border); color: var(--figma-color-bg);
+    }
+    .step-item.active .step-index, .step-item.done .step-index { background: var(--figma-color-bg-brand); color: var(--figma-color-text-onbrand); }
+    .step-label { font-size: 11px; }
+    .page-picker { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .pages-source { display: flex; flex-wrap: wrap; gap: 6px; min-height: 32px; padding: 8px; border: 1px solid var(--figma-color-border); border-radius: 6px; }
+    .page-chip {
+      padding: 4px 10px; border-radius: 12px; cursor: grab; user-select: none;
+      background: var(--figma-color-bg-secondary); border: 1px solid var(--figma-color-border);
+      font-size: 11px;
+    }
+    .page-chip:active { cursor: grabbing; opacity: 0.7; }
+    .page-chip.current { border-color: var(--figma-color-border-brand); background: var(--figma-color-bg-brand-tertiary, #ede9fe); }
+    .drop-zone {
+      padding: 16px; border: 2px dashed var(--figma-color-border); border-radius: 8px;
+      text-align: center; color: var(--figma-color-text-secondary); font-size: 12px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .drop-zone.over { border-color: var(--figma-color-border-brand); background: var(--figma-color-bg-brand-tertiary, #f5f3ff); color: var(--figma-color-text); }
+    .drop-zone.ready { border-style: solid; border-color: var(--figma-color-border-brand); }
+    .primary-actions { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+    .reference-row { display: flex; align-items: center; gap: 8px; }
+    .reference-file-name { font-size: 11px; color: var(--figma-color-text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .paste-zone {
+      margin-top: 6px;
+      padding: 8px 10px;
+      border: 1px dashed var(--figma-color-border);
+      border-radius: 6px;
+      background: var(--figma-color-bg-secondary);
+      color: var(--figma-color-text-secondary);
+      font-size: 11px;
+      line-height: 1.4;
+      cursor: text;
+    }
+    .paste-zone.active {
+      border-color: var(--figma-color-border-brand);
+      color: var(--figma-color-text);
+      background: var(--figma-color-bg-brand-tertiary, #f5f3ff);
+    }
+    .reference-preview {
+      margin-top: 6px;
+      border: 1px solid var(--figma-color-border);
+      border-radius: 6px;
+      padding: 6px;
+      background: var(--figma-color-bg-secondary);
+    }
+    .reference-preview img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 4px;
+      background: var(--figma-color-bg);
+    }
+    .reference-preview-actions { margin-top: 6px; display: flex; gap: 6px; }
+    .reference-preview-actions button { flex: 1; }
+    .toolbar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .quick-row { display: flex; gap: 8px; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }
+    .quick-row select { padding: 6px; border-radius: 6px; border: 1px solid var(--figma-color-border); background: var(--figma-color-bg); color: var(--figma-color-text); }
+    .timeout-row label { font-size: 12px; color: var(--figma-color-text-secondary); white-space: nowrap; }
+    .timeout-row input[type="number"] {
+      width: 52px; padding: 6px 8px; border-radius: 6px;
+      border: 1px solid var(--figma-color-border); background: var(--figma-color-bg);
+      color: var(--figma-color-text); font-size: 12px;
+    }
+    .timeout-row .timeout-unit { font-size: 11px; color: var(--figma-color-text-secondary); }
+    .guide-row { margin-top: 0; margin-bottom: 10px; }
+    .guide-row .reference-file-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    button {
+      padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer;
+      background: var(--figma-color-bg-brand); color: var(--figma-color-text-onbrand); font-size: 12px;
+    }
+    button.secondary { background: var(--figma-color-bg-secondary); color: var(--figma-color-text); padding: 6px 12px; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .tree-toolbar {
+      display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 6px;
+    }
+    .tree-toolbar input[type="search"] {
+      flex: 1 1 140px; min-width: 120px; padding: 6px 8px; border-radius: 6px;
+      border: 1px solid var(--figma-color-border); background: var(--figma-color-bg);
+      color: var(--figma-color-text); font-size: 11px;
+    }
+    .tree-toolbar button { padding: 5px 10px; font-size: 11px; }
+    .tree-summary { font-size: 10px; color: var(--figma-color-text-secondary); margin-bottom: 6px; }
+    #tree {
+      flex: 1;
+      min-height: 280px;
+      border: 1px solid var(--figma-color-border);
+      border-radius: 6px;
+      overflow: auto;
+      padding: 8px;
+      background: var(--figma-color-bg);
+    }
+    .tree-empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 240px;
+      padding: 24px;
+      text-align: center;
+      color: var(--figma-color-text-secondary);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .node { padding: 2px 0; border-left: 2px solid transparent; }
+    .node-children { margin-left: 0; }
+    .node.collapsed > .node-children { display: none; }
+    .node-head {
+      display: flex; align-items: center; gap: 6px;
+      padding: 3px 4px; border-radius: 4px;
+    }
+    .node-head.has-children { cursor: pointer; }
+    .node-head.has-children:hover { background: var(--figma-color-bg-secondary); }
+    .tree-toggle {
+      width: 18px; height: 18px; padding: 0; flex-shrink: 0;
+      border: none; border-radius: 4px; pointer-events: none;
+      background: transparent; color: var(--figma-color-text-secondary);
+      font-size: 9px; line-height: 18px; text-align: center;
+    }
+    .tree-toggle-spacer { width: 18px; flex-shrink: 0; display: inline-block; }
+    .badge.child-count { color: var(--figma-color-text-secondary); font-style: italic; }
+    .node.page { border-left-color: #9747ff; }
+    .node.panel { border-left-color: #7b61ff; }
+    .node.sprite { border-left-color: #14ae5c; }
+    .node.label { border-left-color: #f24822; }
+    .node.button { border-left-color: #ffa629; }
+    .badge { font-size: 10px; padding: 1px 5px; border-radius: 4px; background: var(--figma-color-bg-secondary); }
+    .hint { color: var(--figma-color-text-secondary); font-size: 10px; }
+    .hint.diff { color: var(--figma-color-text); background: var(--figma-color-bg-secondary); border-radius: 4px; padding: 2px 4px; display: inline-block; margin-top: 4px; }
+    .node.moved { background: color-mix(in srgb, var(--figma-color-bg-brand-tertiary, #ede9fe) 40%, transparent); border-radius: 4px; }
+    .msg { margin-top: 8px; padding: 8px; border-radius: 6px; background: var(--figma-color-bg-secondary); font-size: 11px; line-height: 1.45; white-space: pre-wrap; }
+    .msg.error { color: #f24822; }
+    .msg.warn { color: #b45309; }
+    .bridge-hint { font-size: 10px; color: var(--figma-color-text-secondary); margin-bottom: 10px; }
+    .log-panel {
+      flex-shrink: 0;
+      margin-top: 10px;
+      border: 1px solid var(--figma-color-border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      background: var(--figma-color-bg-secondary);
+      max-height: 120px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .log-panel .msg {
+      margin-top: 0;
+      min-height: 40px;
+      max-height: 88px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      flex: 1;
+    }
+    button.primary-lg {
+      padding: 10px 16px;
+      font-size: 13px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <h1>FigmaToCreator</h1>
+    <p class="desc">拖曳 Page → <strong>AI 整理</strong> 或 <strong>離線整理</strong> → 預覽 Figma 圖層 → 確認 → 匯出 Prefab</p>
+    <p class="bridge-hint">使用前請在本機執行：<code>cd tools/ai-organizer && npm run bridge</code></p>
+    <p class="desc"><strong>重要: 節點樹中有勾選的節點才會整理並匯出!!!</strong></p>
+  </header>
+
+  <div class="app-layout">
+    <section class="left-panel">
+      <div class="section-title">節點樹預覽</div>
+      <div class="tree-toolbar">
+        <input type="search" id="treeFilter" placeholder="搜尋名稱 / 類型 / 說明…" autocomplete="off" />
+        <button type="button" class="secondary" id="btnTreeExpandAll" title="展開所有節點">全部展開</button>
+        <button type="button" class="secondary" id="btnTreeCollapseAll" title="收合所有節點">全部收合</button>
+        <button type="button" class="secondary" id="btnTreeCollapseL2" title="只展開到第 2 層（Page → 區塊）">收合至第2層</button>
+      </div>
+      <div id="treeSummary" class="tree-summary"></div>
+      <div class="tree-body">
+        <div id="tree">
+          <div class="tree-empty">拖曳 Page 並解析後，整理結果的階層會顯示於此。<br />可使用搜尋與收合快速瀏覽。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <div id="stepGuide" class="step-guide">
+        <div class="step-item" data-step="1"><span class="step-index">1</span><span class="step-label">選 Page</span></div>
+        <div class="step-item" data-step="2"><span class="step-index">2</span><span class="step-label">載入示意圖</span></div>
+        <div class="step-item" data-step="3"><span class="step-index">3</span><span class="step-label">AI整理預覽或離線整理</span></div>
+        <div class="step-item" data-step="4"><span class="step-index">4</span><span class="step-label">確認匯出</span></div>
+      </div>
+
+      <div class="page-picker">
+        <div class="section-title">Pages</div>
+        <div class="pages-source" id="pagesSource"></div>
+        <div class="drop-zone" id="dropZone">拖曳 Page 到此 → 解析後按按鈕觸發整理</div>
+      </div>
+
+      <div class="primary-actions">
+        <button id="btnCursor" class="primary-lg" disabled>AI 整理並預覽</button>
+        <button id="btnAgent" class="primary-lg" disabled title="不需 API：依位置自動分區、命名與 Widget 锚点">離線整理（位置分區）</button>
+        <div class="reference-row">
+          <button id="btnReference" disabled>載入示意圖</button>
+          <span id="referenceFileName" class="reference-file-name">未載入示意圖</span>
+        </div>
+        <div id="referencePasteZone" class="paste-zone" tabindex="0">
+          貼上示意圖區（Ctrl+V）。先複製圖片，再點此區塊貼上。
+        </div>
+        <div id="referencePreviewWrap" class="reference-preview" style="display:none">
+          <img id="referencePreviewImg" alt="示意圖預覽" />
+          <div class="reference-preview-actions">
+            <button id="btnReplaceReference" type="button" class="secondary">替換</button>
+            <button id="btnClearReference" type="button" class="secondary">清除</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button id="btnRestore" class="secondary" disabled>還原</button>
+        <button id="btnExport" class="secondary" disabled>確認並匯出</button>
+      </div>
+
+      <div class="quick-row">
+        <button id="btnQuickRun" disabled>一鍵執行（整理→預覽→匯出）</button>
+        <select id="quickMode">
+          <option value="cursor">AI 整理</option>
+          <option value="simple">離線整理</option>
+        </select>
+      </div>
+      <div class="quick-row timeout-row">
+        <label for="organizeTimeoutMin">AI 整理逾時設定:</label>
+        <input id="organizeTimeoutMin" type="number" min="1" max="15" step="1" value="3" title="1–15 分鐘，含示意圖 Vision 整理" />
+        <span class="timeout-unit">分鐘</span>
+      </div>
+      <div class="quick-row guide-row reference-row">
+        <button id="btnLoadGuide" type="button" class="secondary">載入整理規則 (.md)</button>
+        <span id="guideFileName" class="reference-file-name">未載入規則</span>
+        <button id="btnClearGuide" type="button" class="secondary" style="display:none">清除</button>
+      </div>
+      <p class="bridge-hint" style="margin-top:-6px">上傳 .md 可對AI整理規則進行補充</p>
+    </section>
+  </div>
+
+  <div class="log-panel">
+    <div class="section-title">Logs</div>
+    <div id="status" class="msg" style="display:none"></div>
+  </div>
+  <input id="referenceImageInput" type="file" accept="image/*" style="display:none" />
+  <input id="guideMdInput" type="file" accept=".md,text/markdown" style="display:none" />
+  <script>
+    var currentIR = null;
+    var rawIR = null;
+    var organizing = false;
+    var lastSelectedPageId = null;
+    var lastSelectedPageName = null;
+    var currentPageId = null;
+    var previewDiffByNodeId = {};
+    var loadingTimer = null;
+    var loadingBaseText = '';
+    var rpcSeq = 1;
+    var pendingRpc = {};
+    var ORGANIZE_TIMEOUT_MIN_LIMIT = 1;
+    var ORGANIZE_TIMEOUT_MAX_LIMIT = 15;
+    var ORGANIZE_TIMEOUT_DEFAULT_MIN = 3;
+    var ORGANIZE_TIMEOUT_RPC_BUFFER_MS = 15000;
+
+    var RPC_TIMEOUT = {
+      health: 10000,
+      saveExport: 45000,
+    };
+
+    function clampOrganizeTimeoutMin(value) {
+      var n = Math.round(Number(value));
+      if (!Number.isFinite(n)) return ORGANIZE_TIMEOUT_DEFAULT_MIN;
+      return Math.min(ORGANIZE_TIMEOUT_MAX_LIMIT, Math.max(ORGANIZE_TIMEOUT_MIN_LIMIT, n));
+    }
+
+    function getOrganizeTimeoutMin() {
+      var el = document.getElementById('organizeTimeoutMin');
+      if (!el) return ORGANIZE_TIMEOUT_DEFAULT_MIN;
+      return clampOrganizeTimeoutMin(el.value);
+    }
+
+    function getOrganizeRpcTimeoutMs() {
+      return getOrganizeTimeoutMin() * 60 * 1000 + ORGANIZE_TIMEOUT_RPC_BUFFER_MS;
+    }
+
+    function organizeTimeoutHint() {
+      return '（最多 ' + getOrganizeTimeoutMin() + ' 分鐘）';
+    }
+
+    function getOrganizeTimeoutPayload() {
+      return { organizeTimeoutMin: getOrganizeTimeoutMin() };
+    }
+
+    var organizeTimeoutSaveTimer = null;
+    function scheduleSaveOrganizeTimeout() {
+      if (organizeTimeoutSaveTimer) clearTimeout(organizeTimeoutSaveTimer);
+      organizeTimeoutSaveTimer = setTimeout(function () {
+        organizeTimeoutSaveTimer = null;
+        var min = getOrganizeTimeoutMin();
+        var el = document.getElementById('organizeTimeoutMin');
+        if (el) el.value = String(min);
+        callPluginRpc('set-organize-timeout', { organizeTimeoutMin: min }, 10000).catch(function () {});
+      }, 400);
+    }
+
+    function loadOrganizeTimeoutSetting() {
+      return callPluginRpc('get-organize-timeout', {}, 10000)
+        .then(function (data) {
+          var el = document.getElementById('organizeTimeoutMin');
+          if (el && data && typeof data.organizeTimeoutMin === 'number') {
+            el.value = String(clampOrganizeTimeoutMin(data.organizeTimeoutMin));
+          }
+        })
+        .catch(function () {});
+    }
+
+    var pagesSource = document.getElementById('pagesSource');
+    var dropZone = document.getElementById('dropZone');
+    var treeEl = document.getElementById('tree');
+    var treeSummaryEl = document.getElementById('treeSummary');
+    var treeFilterEl = document.getElementById('treeFilter');
+    var btnTreeExpandAll = document.getElementById('btnTreeExpandAll');
+    var btnTreeCollapseAll = document.getElementById('btnTreeCollapseAll');
+    var btnTreeCollapseL2 = document.getElementById('btnTreeCollapseL2');
+    /** @type {Set<string>} 折疊中的節點 key（figmaId 或 depth:name） */
+    var treeCollapsedKeys = new Set();
+    var treeFilterQuery = '';
+    var treeCollapseDefaultApplied = false;
+    /** depth>=此值的父節點預設收合（0=root, 1=page 子項, 2=區塊） */
+    var TREE_DEFAULT_COLLAPSE_DEPTH = 2;
+    var statusEl = document.getElementById('status');
+    var btnCursor = document.getElementById('btnCursor');
+    var btnExport = document.getElementById('btnExport');
+    var btnAgent = document.getElementById('btnAgent');
+    var btnReference = document.getElementById('btnReference');
+    var btnQuickRun = document.getElementById('btnQuickRun');
+    var quickMode = document.getElementById('quickMode');
+    var btnLoadGuide = document.getElementById('btnLoadGuide');
+    var btnClearGuide = document.getElementById('btnClearGuide');
+    var guideMdInput = document.getElementById('guideMdInput');
+    var guideFileNameEl = document.getElementById('guideFileName');
+    var btnRestore = document.getElementById('btnRestore');
+    var referenceImageInput = document.getElementById('referenceImageInput');
+    var referenceFileNameEl = document.getElementById('referenceFileName');
+    var referencePasteZone = document.getElementById('referencePasteZone');
+    var referencePreviewWrap = document.getElementById('referencePreviewWrap');
+    var referencePreviewImg = document.getElementById('referencePreviewImg');
+    var btnReplaceReference = document.getElementById('btnReplaceReference');
+    var btnClearReference = document.getElementById('btnClearReference');
+    var stepGuide = document.getElementById('stepGuide');
+    var selectedReferenceFile = null;
+    var referencePreviewUrl = '';
+    var selectedGuideFile = null;
+    var guideMarkdownText = '';
+    var exportCompleted = false;
+    var baseButtonLabels = {
+      cursor: btnCursor ? btnCursor.textContent : 'AI整理並預覽',
+      agent: btnAgent ? btnAgent.textContent : '離線整理（位置分區）',
+      reference: btnReference ? btnReference.textContent : '載入示意圖',
+      quickRun: btnQuickRun ? btnQuickRun.textContent : '一鍵執行（整理→預覽→匯出）',
+      export: btnExport ? btnExport.textContent : '確認並匯出',
+      restore: btnRestore ? btnRestore.textContent : '還原',
+    };
+
+    function safeStringify(value) {
+      var seen = [];
+      try {
+        return JSON.stringify(value, function (_key, val) {
+          if (val && typeof val === 'object') {
+            if (seen.indexOf(val) >= 0) return '[Circular]';
+            seen.push(val);
+          }
+          if (val instanceof Error) {
+            return {
+              name: val.name,
+              message: val.message,
+              stack: val.stack,
+            };
+          }
+          return val;
+        });
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function toErrorText(errLike) {
+      if (errLike instanceof Error) return errLike.message;
+      if (typeof errLike === 'string') return errLike;
+      if (errLike && typeof errLike === 'object') {
+        if (typeof errLike.message === 'string') return errLike.message;
+        if (typeof errLike.error === 'string') return errLike.error;
+        if (errLike.error && typeof errLike.error.message === 'string') return errLike.error.message;
+        var keys = Object.keys(errLike);
+        if (keys.length) {
+          try {
+            return keys.map(function (k) { return k + '=' + String(errLike[k]); }).join(', ');
+          } catch (e) {
+            // fall through
+          }
+        }
+      }
+      var json = safeStringify(errLike);
+      if (json) return json;
+      return String(errLike);
+    }
+
+    function formatErrorInfo(errLike) {
+      if (errLike instanceof Error) {
+        return 'plugin | ' + (errLike.name || 'Error') + ' | ' + errLike.message;
+      }
+      if (errLike && typeof errLike === 'object') {
+        var source = typeof errLike.source === 'string' ? errLike.source : 'unknown';
+        var code = typeof errLike.code === 'string' ? errLike.code : 'UNKNOWN';
+        var message = toErrorText(errLike);
+        return source + ' | ' + code + ' | ' + message;
+      }
+      return 'unknown | UNKNOWN | ' + toErrorText(errLike);
+    }
+
+    function showStatus(text, isError, append, isWarn) {
+      statusEl.style.display = 'block';
+      if (append) {
+        var prev = statusEl.textContent ? statusEl.textContent + '\n' : '';
+        statusEl.textContent = prev + text;
+      } else {
+        statusEl.textContent = text;
+      }
+      var cls = 'msg';
+      if (isError) cls += ' error';
+      else if (isWarn) cls += ' warn';
+      statusEl.className = cls;
+      refreshUiGuidance();
+    }
+
+    function validationStatusFlags(validation) {
+      if (!validation || !validation.issues || !validation.issues.length) {
+        return { isError: false, isWarn: false };
+      }
+      var errorCount = typeof validation.errorCount === 'number'
+        ? validation.errorCount
+        : validation.issues.filter(function (i) { return i.severity === 'error'; }).length;
+      var warnCount = typeof validation.warnCount === 'number'
+        ? validation.warnCount
+        : validation.issues.filter(function (i) { return i.severity === 'warn'; }).length;
+      return { isError: errorCount > 0, isWarn: errorCount === 0 && warnCount > 0 };
+    }
+
+    function stopLoadingStatus() {
+      if (loadingTimer) {
+        clearInterval(loadingTimer);
+        loadingTimer = null;
+      }
+      loadingBaseText = '';
+    }
+
+    function startLoadingStatus(baseText) {
+      stopLoadingStatus();
+      loadingBaseText = baseText;
+      var step = 0;
+      showStatus(baseText + '.');
+      loadingTimer = setInterval(function () {
+        step = (step + 1) % 3;
+        var dots = step === 0 ? '.' : (step === 1 ? '..' : '...');
+        showStatus(loadingBaseText + dots);
+      }, 450);
+    }
+
+    function setPreviewUi(active) {
+      btnRestore.disabled = !active;
+      refreshUiGuidance();
+    }
+
+    function setRestoreLabels(count) {
+      var c = Math.max(Number(count) || 0, 0);
+      btnRestore.textContent = '還原';
+      if (c === 0) exportCompleted = false;
+      refreshUiGuidance();
+    }
+
+    function setDiffs(diffs) {
+      previewDiffByNodeId = {};
+      (diffs || []).forEach(function (d) {
+        if (!d || !d.nodeId) return;
+        previewDiffByNodeId[d.nodeId] = d;
+      });
+    }
+
+    function refreshReferencePreview(file) {
+      if (referencePreviewUrl) {
+        URL.revokeObjectURL(referencePreviewUrl);
+        referencePreviewUrl = '';
+      }
+      if (!file) {
+        if (referencePreviewWrap) referencePreviewWrap.style.display = 'none';
+        if (referencePreviewImg) referencePreviewImg.removeAttribute('src');
+        return;
+      }
+      if (referencePreviewWrap) referencePreviewWrap.style.display = 'block';
+      if (referencePreviewImg) {
+        referencePreviewUrl = URL.createObjectURL(file);
+        referencePreviewImg.src = referencePreviewUrl;
+      }
+    }
+
+    function clearReferenceFile(showMsg) {
+      selectedReferenceFile = null;
+      if (referenceFileNameEl) referenceFileNameEl.textContent = '未載入示意圖';
+      if (referenceImageInput) referenceImageInput.value = '';
+      refreshReferencePreview(null);
+      if (showMsg) showStatus('已清除示意圖。');
+      refreshUiGuidance();
+    }
+
+    function getStepState() {
+      var hasPage = !!(rawIR || currentIR);
+      var hasReference = !!selectedReferenceFile;
+      var hasPreview = !!(currentIR && currentIR.organizedBy);
+      var hasExport = !!exportCompleted;
+      var active = 1;
+      if (!hasPage) active = 1;
+      else if (!hasReference) active = 2;
+      else if (!hasPreview) active = 3;
+      else active = 4;
+      return {
+        hasPage: hasPage,
+        hasReference: hasReference,
+        hasPreview: hasPreview,
+        hasExport: hasExport,
+        active: active,
+      };
+    }
+
+    function updateStepGuide() {
+      if (!stepGuide) return;
+      var state = getStepState();
+      var doneByStep = {
+        1: state.hasPage,
+        2: state.hasReference,
+        3: state.hasPreview,
+        4: state.hasExport,
+      };
+      Array.prototype.forEach.call(stepGuide.querySelectorAll('.step-item'), function (el) {
+        var step = Number(el.getAttribute('data-step') || '0');
+        el.classList.toggle('active', step === state.active);
+        el.classList.toggle('done', !!doneByStep[step]);
+      });
+    }
+
+    function applyButtonHint(btn, baseLabel, reason) {
+      if (!btn) return;
+      if (btn.disabled && reason) {
+        btn.textContent = baseLabel + '（' + reason + '）';
+        btn.title = reason;
+      } else {
+        btn.textContent = baseLabel;
+        btn.title = '';
+      }
+    }
+
+    function updateButtonHints() {
+      var hasPage = !!(rawIR || currentIR);
+      var hasReference = !!selectedReferenceFile;
+      var hasCurrent = !!currentIR;
+      var hasPageSelection = !!(lastSelectedPageId || currentPageId);
+      var cursorReason = !hasPage ? '請先拖曳 Page' : (!hasReference ? '請先載入示意圖' : (organizing ? '整理中，請稍候' : ''));
+      var referenceReason = !hasPage ? '請先拖曳 Page' : (organizing ? '整理中，請稍候' : '');
+      var quickReason = !hasPageSelection ? '請先拖曳 Page' : ((quickMode && quickMode.value === 'cursor' && !hasReference) ? '請先載入示意圖' : (organizing ? '整理中，請稍候' : ''));
+      var agentReason = !hasPage ? '請先拖曳 Page' : (organizing ? '整理中，請稍候' : '');
+      var exportReason = !hasCurrent ? '請先解析 Page' : (organizing ? '整理中，請稍候' : '');
+      applyButtonHint(btnCursor, baseButtonLabels.cursor, cursorReason);
+      applyButtonHint(btnReference, baseButtonLabels.reference, referenceReason);
+      applyButtonHint(btnQuickRun, baseButtonLabels.quickRun, quickReason);
+      applyButtonHint(btnAgent, baseButtonLabels.agent, agentReason);
+      applyButtonHint(btnExport, baseButtonLabels.export, exportReason);
+      applyButtonHint(btnRestore, baseButtonLabels.restore, organizing ? '整理中，請稍候' : '');
+    }
+
+    function refreshUiGuidance() {
+      updateStepGuide();
+      updateButtonHints();
+    }
+
+    function getOrganizeInputIR() {
+      return rawIR || currentIR;
+    }
+
+    function buildIncludedIR(ir) {
+      if (!ir || !ir.root) return null;
+
+      function cloneNode(node) {
+        if (!node || node.included === false) return null;
+        var next = Object.assign({}, node);
+        var nextChildren = [];
+        (node.children || []).forEach(function (child) {
+          var kept = cloneNode(child);
+          if (kept) nextChildren.push(kept);
+        });
+        next.children = nextChildren;
+        return next;
+      }
+
+      var root = cloneNode(ir.root);
+      if (!root) return null;
+      return Object.assign({}, ir, { root: root });
+    }
+
+    function collectIncludedMap(ir) {
+      var map = {};
+      if (!ir || !ir.root) return map;
+      (function walk(node) {
+        if (!node) return;
+        if (node.figmaId) map[node.figmaId] = node.included !== false;
+        (node.children || []).forEach(walk);
+      })(ir.root);
+      return map;
+    }
+
+    function applyIncludedMap(ir, includedMap) {
+      if (!ir || !ir.root || !includedMap) return ir;
+      (function walk(node) {
+        if (!node) return;
+        if (node.figmaId && Object.prototype.hasOwnProperty.call(includedMap, node.figmaId)) {
+          node.included = includedMap[node.figmaId];
+        }
+        (node.children || []).forEach(walk);
+      })(ir.root);
+      return ir;
+    }
+
+    function applyOrganizeResult(data, sourceLabel) {
+      organizing = false;
+      exportCompleted = false;
+      btnCursor.disabled = false;
+      btnAgent.disabled = false;
+      btnReference.disabled = false;
+      btnQuickRun.disabled = false;
+      resetTreeCollapseState();
+      if (treeFilterEl) treeFilterEl.value = '';
+      treeFilterQuery = '';
+      currentIR = data.ir;
+      btnExport.disabled = !currentIR;
+      // 保留 rawIR，讓使用者可連續整理，不必重拖 Page。
+      setDiffs(data.diffs);
+      renderTree(currentIR);
+      setPreviewUi(true);
+      setRestoreLabels(data.remainingSessions || 1);
+      var note = data.agentSummary ? '｜' + data.agentSummary : '';
+      var driftNote = '';
+      if (typeof data.driftCount === 'number' && typeof data.driftMax === 'number') {
+        driftNote = '｜drift=' + data.driftCount + '（max ' + Number(data.driftMax).toFixed(2) + 'px）';
+      }
+      var mainLine =
+        '已' + sourceLabel + '並預覽「' + data.pageName + '」' + note +
+        ' — ' + data.moved + ' 節點、' + data.virtualFrames + ' 個 [FTC] 容器' + driftNote + '。';
+      var valFlags = validationStatusFlags(data.validation);
+      showStatus(mainLine, valFlags.isError, false, valFlags.isWarn && !valFlags.isError);
+      if (data.validationSummary) {
+        showStatus(data.validationSummary, valFlags.isError, true, valFlags.isWarn && !valFlags.isError);
+      }
+      refreshUiGuidance();
+    }
+
+    function callPluginRpc(type, payload, timeoutMs) {
+      var id = rpcSeq++;
+      var effectiveTimeout = typeof timeoutMs === 'number' ? timeoutMs : 15000;
+      return new Promise(function (resolve, reject) {
+        pendingRpc[id] = { resolve: resolve, reject: reject, type: type };
+        parent.postMessage({
+          pluginMessage: Object.assign({ type: type, requestId: id }, payload || {}),
+        }, '*');
+        setTimeout(function () {
+          if (!pendingRpc[id]) return;
+          delete pendingRpc[id];
+          reject(new Error(type + ' timeout (' + effectiveTimeout + 'ms)'));
+        }, effectiveTimeout);
+      });
+    }
+
+    function getCustomGuidePayload() {
+      if (!guideMarkdownText || !guideMarkdownText.trim()) return {};
+      return {
+        customGuideName: (selectedGuideFile && selectedGuideFile.name) ? selectedGuideFile.name : 'user-guide.md',
+        customGuideMarkdown: guideMarkdownText.trim(),
+      };
+    }
+
+    function updateGuideUi() {
+      if (guideFileNameEl) {
+        guideFileNameEl.textContent = selectedGuideFile
+          ? selectedGuideFile.name
+          : (guideMarkdownText ? 'user-guide.md' : '未載入規則');
+      }
+      if (btnClearGuide) {
+        btnClearGuide.style.display = guideMarkdownText ? '' : 'none';
+      }
+    }
+
+    function clearGuideFile(showMsg) {
+      selectedGuideFile = null;
+      guideMarkdownText = '';
+      if (guideMdInput) guideMdInput.value = '';
+      updateGuideUi();
+      if (showMsg) showStatus('已清除整理規則 .md');
+      refreshUiGuidance();
+    }
+
+    function setGuideFile(file, markdown) {
+      selectedGuideFile = file;
+      guideMarkdownText = markdown || '';
+      updateGuideUi();
+      refreshUiGuidance();
+      return callPluginRpc('preview-custom-guide', { customGuideMarkdown: guideMarkdownText }, 5000)
+        .then(function (preview) {
+          var name = file && file.name ? file.name : 'user-guide.md';
+          var lines = ['已載入整理規則：' + name];
+          if (preview && preview.summary) {
+            lines.push(preview.summary.replace(/^##[^\n]*\n?/m, '').trim());
+          } else {
+            lines.push('（未解析到程式強制規則，仍會隨 AI prompt 一併送出供 Agent 參考）');
+          }
+          showStatus(lines.join('\n'));
+        })
+        .catch(function () {
+          showStatus('已載入整理規則：' + (file && file.name ? file.name : 'user-guide.md'));
+        });
+    }
+
+    function readFileAsText(file) {
+      return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function () { resolve(String(reader.result || '')); };
+        reader.onerror = function () { reject(new Error('規則檔讀取失敗')); };
+        reader.readAsText(file, 'utf-8');
+      });
+    }
+
+    async function checkBridge() {
+      var data = await callPluginRpc('bridge-health', {}, RPC_TIMEOUT.health);
+      if (!data.ok) throw data.error || new Error('bridge 未就緒');
+      if (!data.hasCursorKey) {
+        throw new Error('bridge 已啟動，但 CURSOR_API_KEY 未設定（請檢查 tools/ai-organizer/.env）');
+      }
+      return data;
+    }
+
+    async function runCursorOrganize() {
+      var inputIR = getOrganizeInputIR();
+      if (!inputIR || organizing) return;
+      var filteredIR = buildIncludedIR(inputIR);
+      if (!filteredIR) {
+        showStatus('目前沒有勾選可整理的節點。', true);
+        return;
+      }
+      organizing = true;
+      exportCompleted = false;
+      btnCursor.disabled = true;
+      btnAgent.disabled = true;
+      btnReference.disabled = true;
+      btnQuickRun.disabled = true;
+      btnExport.disabled = true;
+      setPreviewUi(false);
+      startLoadingStatus('Cursor Agent 整理中' + organizeTimeoutHint());
+      try {
+        await checkBridge();
+        var data = await callPluginRpc(
+          'cursor-organize',
+          Object.assign({ ir: filteredIR }, getCustomGuidePayload(), getOrganizeTimeoutPayload()),
+          getOrganizeRpcTimeoutMs(),
+        );
+        stopLoadingStatus();
+        applyOrganizeResult(data, '整理');
+      } catch (e) {
+        stopLoadingStatus();
+        showStatus(
+          'Cursor 整理失敗：' + formatErrorInfo(e) + '\n請確認已執行 npm run bridge，且 tools/ai-organizer/.env 有 CURSOR_API_KEY',
+          true,
+        );
+        btnCursor.disabled = false;
+        btnAgent.disabled = false;
+        btnReference.disabled = false;
+        btnQuickRun.disabled = false;
+        btnExport.disabled = !currentIR;
+        setPreviewUi(false);
+        organizing = false;
+        refreshUiGuidance();
+      }
+    }
+
+    async function runSimpleOrganize() {
+      var inputIR = getOrganizeInputIR();
+      if (!inputIR || organizing) return;
+      var filteredIR = buildIncludedIR(inputIR);
+      if (!filteredIR) {
+        showStatus('目前沒有勾選可整理的節點。', true);
+        return;
+      }
+      organizing = true;
+      exportCompleted = false;
+      btnAgent.disabled = true;
+      btnCursor.disabled = true;
+      btnReference.disabled = true;
+      btnQuickRun.disabled = true;
+      btnExport.disabled = true;
+      setPreviewUi(false);
+      startLoadingStatus('離線位置分區整理中');
+      try {
+        var data = await callPluginRpc('agent-organize-heuristic', { ir: filteredIR }, 60000);
+        stopLoadingStatus();
+        applyOrganizeResult(data, '離線位置分區');
+      } catch (e) {
+        stopLoadingStatus();
+        showStatus('離線整理失敗：' + formatErrorInfo(e), true);
+        organizing = false;
+        btnAgent.disabled = false;
+        btnCursor.disabled = false;
+        btnReference.disabled = false;
+        btnQuickRun.disabled = false;
+        btnExport.disabled = !currentIR;
+        setPreviewUi(false);
+        refreshUiGuidance();
+      }
+    }
+
+    async function runQuickFlow() {
+      if (organizing) return;
+      var pageId = lastSelectedPageId || currentPageId;
+      var pageName = lastSelectedPageName || '目前 Page';
+      var quickReferenceFile = selectedReferenceFile;
+      var previousIncludedMap = collectIncludedMap(currentIR || rawIR);
+      if (!pageId) {
+        showStatus('請先拖曳或雙擊選擇 Page。', true);
+        return;
+      }
+
+      btnQuickRun.disabled = true;
+      btnReference.disabled = true;
+      btnExport.disabled = true;
+      exportCompleted = false;
+      setPreviewUi(false);
+      startLoadingStatus('一鍵流程進行中：解析 Page');
+      try {
+        var parsed = await callPluginRpc('organize-page', { pageId: pageId }, 30000);
+        applyIncludedMap(parsed.ir, previousIncludedMap);
+        resetTreeCollapseState();
+        if (treeFilterEl) treeFilterEl.value = '';
+        treeFilterQuery = '';
+        currentIR = parsed.ir;
+        rawIR = parsed.ir;
+        setDiffs([]);
+        renderTree(currentIR);
+        dropZone.textContent = '已解析：' + (parsed.pageName || pageName);
+
+        if (quickMode.value === 'cursor') {
+          if (!quickReferenceFile) {
+            throw new Error('請先載入示意圖，再使用 AI 一鍵執行。');
+          }
+          await runReferenceHierarchy(quickReferenceFile);
+        } else {
+          await runSimpleOrganize();
+        }
+
+        if (currentIR) {
+          stopLoadingStatus();
+          showStatus('一鍵流程：已完成整理與預覽，開始匯出…');
+          parent.postMessage({ pluginMessage: { type: 'export-confirmed', ir: currentIR } }, '*');
+        }
+      } catch (e) {
+        stopLoadingStatus();
+        showStatus('一鍵流程失敗：' + formatErrorInfo(e), true);
+        btnQuickRun.disabled = false;
+        btnReference.disabled = false;
+        btnExport.disabled = !currentIR;
+        setPreviewUi(false);
+        refreshUiGuidance();
+      }
+    }
+
+    function readFileAsBase64(file) {
+      return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function () {
+          var result = reader.result || '';
+          var text = String(result);
+          var comma = text.indexOf(',');
+          resolve(comma >= 0 ? text.slice(comma + 1) : text);
+        };
+        reader.onerror = function () { reject(new Error('示意圖讀取失敗')); };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function runReferenceHierarchy(file) {
+      var inputIR = rawIR;
+      if (organizing) return;
+      if (!inputIR) {
+        showStatus('請先重新解析 Page，再執行示意圖 hierarchy。', true);
+        return;
+      }
+      var filteredIR = buildIncludedIR(inputIR);
+      if (!filteredIR) {
+        showStatus('目前沒有勾選可整理的節點。', true);
+        return;
+      }
+      if (!file) {
+        showStatus('請先選擇示意圖。', true);
+        return;
+      }
+
+      organizing = true;
+      exportCompleted = false;
+      btnReference.disabled = true;
+      btnCursor.disabled = true;
+      btnAgent.disabled = true;
+      btnQuickRun.disabled = true;
+      btnExport.disabled = true;
+      setPreviewUi(false);
+      startLoadingStatus('示意圖 + IR 生成 hierarchy 中' + organizeTimeoutHint());
+      try {
+        var imageBase64 = await readFileAsBase64(file);
+        var data = await callPluginRpc(
+          'reference-hierarchy-organize',
+          Object.assign(
+            { ir: filteredIR, referenceImageBase64: imageBase64, referenceImageName: file.name },
+            getCustomGuidePayload(),
+            getOrganizeTimeoutPayload(),
+          ),
+          getOrganizeRpcTimeoutMs(),
+        );
+        stopLoadingStatus();
+        applyOrganizeResult(data, '載入示意圖生成 hierarchy');
+        if (data.files && data.files.organizedIr) {
+          showStatus(
+            '已依示意圖生成 hierarchy 並預覽。\n輸出：' + data.files.organizedIr,
+            false,
+            true,
+          );
+        }
+      } catch (e) {
+        stopLoadingStatus();
+        showStatus('示意圖 hierarchy 整理失敗：' + formatErrorInfo(e), true);
+        organizing = false;
+        btnReference.disabled = false;
+        btnCursor.disabled = false;
+        btnAgent.disabled = false;
+        btnQuickRun.disabled = false;
+        btnExport.disabled = !currentIR;
+        refreshUiGuidance();
+      } finally {
+        if (referenceImageInput) referenceImageInput.value = '';
+        refreshUiGuidance();
+      }
+    }
+
+    function renderPages(pages, activePageId) {
+      currentPageId = activePageId || null;
+      pagesSource.innerHTML = '';
+      pages.forEach(function (page) {
+        var chip = document.createElement('div');
+        chip.className = 'page-chip' + (page.id === activePageId ? ' current' : '');
+        chip.textContent = page.name;
+        chip.draggable = true;
+        chip.dataset.pageId = page.id;
+        chip.dataset.pageName = page.name;
+        chip.addEventListener('dragstart', function (e) {
+          e.dataTransfer.setData('text/plain', page.id);
+        });
+        chip.addEventListener('dblclick', function () {
+          selectPage(page.id, page.name);
+        });
+        pagesSource.appendChild(chip);
+      });
+    }
+
+    function selectPage(pageId, pageName) {
+      lastSelectedPageId = pageId;
+      lastSelectedPageName = pageName;
+      exportCompleted = false;
+      dropZone.textContent = '解析中：' + pageName;
+      dropZone.classList.add('ready');
+      showStatus('正在解析 Page「' + pageName + '」…');
+      parent.postMessage({ pluginMessage: { type: 'organize-page', pageId: pageId } }, '*');
+      refreshUiGuidance();
+    }
+
+    dropZone.addEventListener('dragover', function (e) { e.preventDefault(); dropZone.classList.add('over'); });
+    dropZone.addEventListener('dragleave', function () { dropZone.classList.remove('over'); });
+    dropZone.addEventListener('drop', function (e) {
+      e.preventDefault();
+      dropZone.classList.remove('over');
+      var pageId = e.dataTransfer.getData('text/plain');
+      if (!pageId) return;
+      var chip = pagesSource.querySelector('[data-page-id="' + pageId + '"]');
+      selectPage(pageId, chip ? chip.dataset.pageName : pageId);
+    });
+
+    function resetTreeCollapseState() {
+      treeCollapsedKeys.clear();
+      treeCollapseDefaultApplied = false;
+    }
+
+    function treeNodeKey(node, depth) {
+      return node.figmaId || 'd' + depth + ':' + node.name;
+    }
+
+    function isVirtualTreeNode(node) {
+      var ft = node.figmaType || '';
+      var id = node.figmaId || '';
+      var name = node.name || '';
+      return ft === 'VIRTUAL' || id.indexOf('vc_') === 0 || name.indexOf('[FTC]') === 0;
+    }
+
+    function minPaintOrderInTree(node) {
+      var values = [];
+      if (typeof node.paintOrder === 'number') values.push(node.paintOrder);
+      (node.children || []).forEach(function (c) {
+        var sub = minPaintOrderInTree(c);
+        if (sub !== null) values.push(sub);
+      });
+      return values.length ? Math.min.apply(null, values) : null;
+    }
+
+    function zOrderKeyForPreview(node) {
+      var roleRank = {
+        background: 0,
+        content: 100,
+        list: 200,
+        header: 300,
+        footer: 400,
+        overlay: 500,
+        custom: 600,
+      };
+      return roleRank[node.containerRole || 'custom'] ?? 999;
+    }
+
+    function effectivePaintOrderForPreview(node) {
+      var painted = minPaintOrderInTree(node);
+      if (painted !== null) return painted;
+      return zOrderKeyForPreview(node);
+    }
+
+    function isOrganizedPageRootNode(parent, children) {
+      var isPage = parent.type === 'page' || parent.figmaType === 'PAGE';
+      return isPage && children.some(function (c) {
+        return isVirtualTreeNode(c);
+      });
+    }
+
+    /** 與 Figma Layers 面板一致：上方為前景（較高 paintOrder） */
+    function childrenInFigmaLayerPanelOrder(children, parent) {
+      if (!children || !children.length) return [];
+      var list = children.slice();
+      var hasSubtreePaint = list.some(function (c) {
+        return minPaintOrderInTree(c) !== null;
+      });
+      if (hasSubtreePaint || list.every(function (c) {
+        return typeof c.paintOrder === 'number';
+      })) {
+        return list.sort(function (a, b) {
+          return effectivePaintOrderForPreview(b) - effectivePaintOrderForPreview(a);
+        });
+      }
+      if (isOrganizedPageRootNode(parent, list) || isVirtualTreeNode(parent)) {
+        return list.sort(function (a, b) {
+          return effectivePaintOrderForPreview(b) - effectivePaintOrderForPreview(a);
+        });
+      }
+      return list.slice().reverse();
+    }
+
+    function countTreeNodes(node) {
+      var n = 1;
+      (node.children || []).forEach(function (c) {
+        n += countTreeNodes(c);
+      });
+      return n;
+    }
+
+    function countSubtree(node) {
+      var n = 0;
+      (node.children || []).forEach(function (c) {
+        n += 1 + countSubtree(c);
+      });
+      return n;
+    }
+
+    function walkTree(node, depth, visitor) {
+      visitor(node, depth);
+      (node.children || []).forEach(function (c) {
+        walkTree(c, depth + 1, visitor);
+      });
+    }
+
+    function nodeMatchesFilter(node, q) {
+      if (!q) return true;
+      var lower = q.toLowerCase();
+      if ((node.name || '').toLowerCase().indexOf(lower) >= 0) return true;
+      if ((node.type || '').toLowerCase().indexOf(lower) >= 0) return true;
+      if ((node.organizeHint || '').toLowerCase().indexOf(lower) >= 0) return true;
+      return (node.children || []).some(function (c) {
+        return nodeMatchesFilter(c, q);
+      });
+    }
+
+    function subtreeMatchesFilter(node, q) {
+      if (!q) return true;
+      return nodeMatchesFilter(node, q);
+    }
+
+    function applyCollapseToDepth(ir, maxVisibleDepth) {
+      treeCollapsedKeys.clear();
+      walkTree(ir.root, 0, function (node, depth) {
+        if ((node.children || []).length && depth >= maxVisibleDepth) {
+          treeCollapsedKeys.add(treeNodeKey(node, depth));
+        }
+      });
+    }
+
+    function collapseAllNodes(ir) {
+      treeCollapsedKeys.clear();
+      walkTree(ir.root, 0, function (node, depth) {
+        if ((node.children || []).length) treeCollapsedKeys.add(treeNodeKey(node, depth));
+      });
+    }
+
+    function toggleTreeNode(collapseKey) {
+      if (treeCollapsedKeys.has(collapseKey)) treeCollapsedKeys.delete(collapseKey);
+      else treeCollapsedKeys.add(collapseKey);
+      if (currentIR) renderTree(currentIR);
+    }
+
+    function renderNode(node, depth) {
+      var q = treeFilterQuery.trim();
+      var children = childrenInFigmaLayerPanelOrder(node.children || [], node);
+      var hasChildren = children.length > 0;
+      var matches = subtreeMatchesFilter(node, q);
+      if (q && !matches) return null;
+
+      var collapseKey = treeNodeKey(node, depth);
+      var filterForceExpand = q && matches && hasChildren;
+      var collapsed = hasChildren && !filterForceExpand && treeCollapsedKeys.has(collapseKey);
+
+      var div = document.createElement('div');
+      div.className = 'node ' + node.type + (collapsed ? ' collapsed' : '');
+      var diff = node.figmaId ? previewDiffByNodeId[node.figmaId] : null;
+      if (diff) div.classList.add('moved');
+      div.style.paddingLeft = depth * 14 + 'px';
+
+      var head = document.createElement('div');
+      head.className = 'node-head' + (hasChildren ? ' has-children' : '');
+
+      if (hasChildren) {
+        var toggle = document.createElement('span');
+        toggle.className = 'tree-toggle';
+        toggle.textContent = collapsed ? '▶' : '▼';
+        toggle.setAttribute('aria-hidden', 'true');
+        head.appendChild(toggle);
+        head.onclick = function () {
+          toggleTreeNode(collapseKey);
+        };
+      } else {
+        var spacer = document.createElement('span');
+        spacer.className = 'tree-toggle-spacer';
+        head.appendChild(spacer);
+      }
+
+      var cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = node.included !== false;
+      cb.onclick = function (e) {
+        e.stopPropagation();
+      };
+      cb.onchange = function () {
+        node.included = cb.checked;
+        (function setDescendants(n, included) {
+          (n.children || []).forEach(function (child) {
+            child.included = included;
+            setDescendants(child, included);
+          });
+        })(node, cb.checked);
+        if (currentIR) renderTree(currentIR);
+      };
+      var name = document.createElement('strong');
+      name.textContent = node.name;
+      var badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = node.type;
+      head.append(cb, name, badge);
+      if (node.visible === false) {
+        var hiddenBadge = document.createElement('span');
+        hiddenBadge.className = 'badge';
+        hiddenBadge.textContent = 'hidden';
+        head.appendChild(hiddenBadge);
+      }
+
+      if (collapsed && hasChildren) {
+        var childCount = document.createElement('span');
+        childCount.className = 'badge child-count';
+        childCount.textContent = countSubtree(node) + ' 項';
+        head.appendChild(childCount);
+      }
+
+      div.appendChild(head);
+
+      if (!collapsed && node.organizeHint) {
+        var hint = document.createElement('div');
+        hint.className = 'hint';
+        hint.style.paddingLeft = '28px';
+        hint.textContent = node.organizeHint;
+        div.appendChild(hint);
+      }
+      if (!collapsed && diff) {
+        var diffEl = document.createElement('div');
+        diffEl.className = 'hint diff';
+        diffEl.style.paddingLeft = '28px';
+        diffEl.textContent = 'Before: ' + diff.fromParent + ' -> After: ' + diff.toParent;
+        div.appendChild(diffEl);
+      }
+
+      if (hasChildren) {
+        var childWrap = document.createElement('div');
+        childWrap.className = 'node-children';
+        children.forEach(function (c) {
+          var childEl = renderNode(c, depth + 1);
+          if (childEl) childWrap.appendChild(childEl);
+        });
+        if (childWrap.childNodes.length) div.appendChild(childWrap);
+      }
+      return div;
+    }
+
+    function updateTreeSummary(ir, visibleCount, total) {
+      if (!treeSummaryEl) return;
+      var q = treeFilterQuery.trim();
+      var collapsedN = treeCollapsedKeys.size;
+      var parts = ['共 ' + total + ' 個節點'];
+      if (visibleCount < total) parts.push('顯示 ' + visibleCount + ' 個');
+      if (collapsedN) parts.push('已收合 ' + collapsedN + ' 組');
+      if (q) parts.push('篩選：「' + q + '」');
+      treeSummaryEl.textContent = parts.join(' · ');
+    }
+
+    function renderTree(ir) {
+      if (!ir || !ir.root) {
+        treeEl.innerHTML =
+          '<div class="tree-empty">尚未載入 IR。請拖曳 Page 到解析區並執行整理。</div>';
+        if (treeSummaryEl) treeSummaryEl.textContent = '';
+        return;
+      }
+
+      var total = countTreeNodes(ir.root);
+      if (!treeCollapseDefaultApplied && total > 10) {
+        applyCollapseToDepth(ir, TREE_DEFAULT_COLLAPSE_DEPTH);
+        treeCollapseDefaultApplied = true;
+      }
+
+      treeEl.innerHTML = '';
+      var rootEl = renderNode(ir.root, 0);
+      if (rootEl) treeEl.appendChild(rootEl);
+      else {
+        treeEl.innerHTML =
+          '<div class="tree-empty">此 Page 尚無可顯示節點。<br />請確認已勾選 included 並完成整理。</div>';
+      }
+
+      var visible = treeEl.querySelectorAll('.node').length;
+      updateTreeSummary(ir, visible, total);
+
+      btnExport.disabled = false;
+      btnAgent.disabled = false;
+      btnReference.disabled = false;
+      btnCursor.disabled = false;
+      btnQuickRun.disabled = false;
+      refreshUiGuidance();
+    }
+
+    if (treeFilterEl) {
+      treeFilterEl.addEventListener('input', function () {
+        treeFilterQuery = treeFilterEl.value || '';
+        if (currentIR) renderTree(currentIR);
+      });
+    }
+    if (btnTreeExpandAll) {
+      btnTreeExpandAll.onclick = function () {
+        treeCollapsedKeys.clear();
+        if (currentIR) renderTree(currentIR);
+      };
+    }
+    if (btnTreeCollapseAll) {
+      btnTreeCollapseAll.onclick = function () {
+        if (!currentIR) return;
+        collapseAllNodes(currentIR);
+        renderTree(currentIR);
+      };
+    }
+    if (btnTreeCollapseL2) {
+      btnTreeCollapseL2.onclick = function () {
+        if (!currentIR) return;
+        applyCollapseToDepth(currentIR, TREE_DEFAULT_COLLAPSE_DEPTH);
+        treeCollapseDefaultApplied = true;
+        renderTree(currentIR);
+      };
+    }
+
+    function downloadJSON(ir) {
+      var name = ir.source.pageName || 'export';
+      var blob = new Blob([JSON.stringify(ir, null, 2)], { type: 'application/json' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = name + '.ir.json';
+      a.click();
+    }
+
+    function downloadBase64Png(base64, filename) {
+      var bin = atob(base64);
+      var arr = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+      var blob = new Blob([arr], { type: 'image/png' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      a.click();
+    }
+
+    btnCursor.onclick = function () {
+      if (!selectedReferenceFile) {
+        showStatus('請先載入示意圖，再執行 AI 整理並預覽。', true);
+        return;
+      }
+      runReferenceHierarchy(selectedReferenceFile);
+    };
+
+    btnAgent.onclick = function () {
+      if (!rawIR) return;
+      runSimpleOrganize();
+    };
+
+    btnQuickRun.onclick = function () { runQuickFlow(); };
+
+    if (btnLoadGuide) {
+      btnLoadGuide.onclick = function () {
+        if (guideMdInput) guideMdInput.click();
+      };
+    }
+
+    if (btnClearGuide) {
+      btnClearGuide.onclick = function () { clearGuideFile(true); };
+    }
+
+    if (guideMdInput) {
+      guideMdInput.addEventListener('change', async function () {
+        var file = guideMdInput.files && guideMdInput.files[0];
+        if (!file) return;
+        if (!/\.md$/i.test(file.name) && file.type !== 'text/markdown') {
+          showStatus('請選擇 .md 檔案', true);
+          guideMdInput.value = '';
+          return;
+        }
+        try {
+          var text = await readFileAsText(file);
+          if (!text.trim()) {
+            showStatus('規則檔為空', true);
+            guideMdInput.value = '';
+            return;
+          }
+          setGuideFile(file, text);
+        } catch (e) {
+          showStatus('讀取規則檔失敗：' + formatErrorInfo(e), true);
+        } finally {
+          guideMdInput.value = '';
+        }
+      });
+    }
+
+    updateGuideUi();
+
+    btnReference.onclick = function () {
+      if (!rawIR && !currentIR) {
+        showStatus('請先解析 Page，再載入示意圖。', true);
+        return;
+      }
+      referenceImageInput.click();
+    };
+
+    function setReferenceFile(file) {
+      selectedReferenceFile = file;
+      if (referenceFileNameEl) {
+        referenceFileNameEl.textContent = (file && file.name) ? file.name : '已貼上示意圖';
+      }
+      refreshReferencePreview(file);
+      showStatus('已載入示意圖：' + ((file && file.name) ? file.name : 'clipboard-image'));
+      refreshUiGuidance();
+    }
+
+    referenceImageInput.addEventListener('change', function () {
+      var file = referenceImageInput.files && referenceImageInput.files[0];
+      if (!file) return;
+      setReferenceFile(file);
+    });
+
+    if (referencePasteZone) {
+      referencePasteZone.addEventListener('focus', function () {
+        referencePasteZone.classList.add('active');
+      });
+      referencePasteZone.addEventListener('blur', function () {
+        referencePasteZone.classList.remove('active');
+      });
+      referencePasteZone.addEventListener('paste', function (e) {
+        var cd = e.clipboardData;
+        if (!cd || !cd.items) return;
+        var file = null;
+        for (var i = 0; i < cd.items.length; i++) {
+          var item = cd.items[i];
+          if (item && item.type && item.type.indexOf('image/') === 0) {
+            file = item.getAsFile();
+            if (file) break;
+          }
+        }
+        if (!file) {
+          showStatus('剪貼簿沒有圖片，請先複製圖片再貼上。', true);
+          return;
+        }
+        e.preventDefault();
+        var ext = (file.type && file.type.split('/')[1]) ? file.type.split('/')[1] : 'png';
+        var pastedFile = new File([file], 'pasted-image.' + ext, { type: file.type || 'image/png' });
+        setReferenceFile(pastedFile);
+      });
+    }
+
+    if (btnReplaceReference) {
+      btnReplaceReference.onclick = function () {
+        referenceImageInput.click();
+      };
+    }
+
+    if (btnClearReference) {
+      btnClearReference.onclick = function () {
+        clearReferenceFile(true);
+      };
+    }
+
+    if (quickMode) {
+      quickMode.addEventListener('change', function () {
+        refreshUiGuidance();
+      });
+    }
+
+    btnRestore.onclick = function () {
+      btnRestore.disabled = true;
+      btnExport.disabled = true;
+      exportCompleted = false;
+      parent.postMessage({ pluginMessage: { type: 'clear-figma-preview', scope: 'all' } }, '*');
+      refreshUiGuidance();
+    };
+
+    btnExport.onclick = function () {
+      if (!currentIR) return;
+      btnExport.disabled = true;
+      exportCompleted = false;
+      parent.postMessage({ pluginMessage: { type: 'export-confirmed', ir: currentIR } }, '*');
+      showStatus('匯出貼圖中…');
+      refreshUiGuidance();
+    };
+
+    onmessage = function (event) {
+      var msg = event.data.pluginMessage;
+      if (!msg) return;
+
+      if (msg.type === 'pages-list') {
+        renderPages(msg.pages || [], msg.currentPageId);
+        checkBridge().then(function (health) {
+          var versionNote = health.version ? (' (bridge ' + health.version + ')') : '';
+          showStatus('Bridge 已就緒' + versionNote + '。之後可按「AI整理並預覽」。');
+        }).catch(function (e) {
+          showStatus(
+            'Bridge 健康檢查失敗：' + formatErrorInfo(e) +
+            '\n請先執行：cd tools/ai-organizer && npm run bridge，並重新載入 plugin',
+            true,
+          );
+        });
+        return;
+      }
+
+      if (
+        msg.type === 'bridge-health-result' ||
+        msg.type === 'preview-custom-guide-result' ||
+        msg.type === 'get-organize-timeout-result' ||
+        msg.type === 'set-organize-timeout-result' ||
+        msg.type === 'cursor-organize-result' ||
+        msg.type === 'organize-page-result' ||
+        msg.type === 'heuristic-organize-result' ||
+        msg.type === 'reference-hierarchy-result'
+      ) {
+        var reqId = msg.requestId;
+        var pending = pendingRpc[reqId];
+        if (pending) {
+          delete pendingRpc[reqId];
+          if (msg.ok === false) {
+            pending.reject(msg.error || msg);
+          } else {
+            pending.resolve(msg);
+          }
+        }
+        return;
+      }
+
+      if (msg.type === 'error') {
+        stopLoadingStatus();
+        showStatus(msg.message, true);
+        organizing = false;
+        btnCursor.disabled = false;
+        btnAgent.disabled = false;
+        btnReference.disabled = false;
+        btnQuickRun.disabled = false;
+        btnExport.disabled = false;
+        setPreviewUi(false);
+        refreshUiGuidance();
+        return;
+      }
+
+      if (msg.type === 'ir-ready') {
+        exportCompleted = false;
+        if (!msg.ir.organizedBy) {
+          resetTreeCollapseState();
+          if (treeFilterEl) treeFilterEl.value = '';
+          treeFilterQuery = '';
+        }
+        currentIR = msg.ir;
+        if (!currentIR.organizedBy) {
+          rawIR = msg.ir;
+          setDiffs([]);
+          setRestoreLabels(0);
+          renderTree(currentIR);
+          dropZone.textContent = '已解析：' + (msg.pageName || currentIR.source.pageName);
+          showStatus('Page 已解析。可先載入示意圖，再按「AI整理並預覽」，或直接按「確認並匯出」。');
+        } else {
+          renderTree(currentIR);
+          if (msg.needsPreview) {
+            parent.postMessage({ pluginMessage: { type: 'preview-to-figma', ir: currentIR } }, '*');
+          }
+        }
+        refreshUiGuidance();
+        return;
+      }
+
+      if (msg.type === 'heuristic-organize-result') {
+        stopLoadingStatus();
+        if (!pendingRpc[msg.requestId]) {
+          if (msg.ok === false) {
+            showStatus('離線整理失敗：' + toErrorText(msg.error || 'unknown error'), true);
+            organizing = false;
+            btnAgent.disabled = false;
+            btnCursor.disabled = false;
+            btnReference.disabled = false;
+            btnQuickRun.disabled = false;
+            refreshUiGuidance();
+            return;
+          }
+          applyOrganizeResult(msg, '離線位置分區');
+        }
+        return;
+      }
+
+      if (msg.type === 'preview-applied') {
+        exportCompleted = false;
+        setPreviewUi(true);
+        setDiffs(msg.diffs);
+        renderTree(currentIR);
+        setRestoreLabels(msg.remainingSessions || 1);
+        showStatus('已預覽到 Figma 圖層。');
+        refreshUiGuidance();
+        return;
+      }
+
+      if (msg.type === 'preview-cleared') {
+        stopLoadingStatus();
+        setPreviewUi(false);
+        setDiffs([]);
+        setRestoreLabels(msg.remainingSessions || 0);
+        if (msg.cleared) {
+          var restoreMsg = '已還原（共還原 ' + (msg.restoredSessions || 0) + ' 次整理）。';
+          var pageId = msg.pageId || (currentIR && currentIR.source && currentIR.source.pageId) || lastSelectedPageId || currentPageId;
+          var pageName = msg.pageName || (currentIR && currentIR.source && currentIR.source.pageName) || lastSelectedPageName || '目前 Page';
+          if (pageId) {
+            showStatus(restoreMsg + '\n重新解析 Page「' + pageName + '」同步中…');
+            currentIR = null;
+            rawIR = null;
+            clearReferenceFile(false);
+            treeEl.innerHTML =
+              '<div class="tree-empty">已還原 Figma 圖層，正在重新解析 Page…</div>';
+            if (treeSummaryEl) treeSummaryEl.textContent = '';
+            btnExport.disabled = true;
+            selectPage(pageId, pageName);
+          } else {
+            showStatus(restoreMsg);
+            btnExport.disabled = !currentIR;
+          }
+        } else {
+          showStatus('目前沒有預覽。');
+          btnExport.disabled = !currentIR;
+        }
+        refreshUiGuidance();
+        return;
+      }
+
+      if (msg.type === 'export-progress') {
+        showStatus('匯出貼圖中… (' + msg.current + '/' + msg.total + ')');
+      }
+
+      if (msg.type === 'export-error') {
+        showStatus('匯出失敗：' + msg.message, true);
+        btnExport.disabled = false;
+        exportCompleted = false;
+        refreshUiGuidance();
+      }
+
+      if (msg.type === 'export-save-fallback') {
+        showStatus(msg.message, true);
+      }
+
+      if (msg.type === 'export-saved') {
+        var errNoteSaved = (msg.errors && msg.errors.length)
+          ? '（貼圖失敗 ' + msg.errors.length + ' 個：' + msg.errors.join('；') + '）'
+          : '';
+        showStatus(
+          '已自動存到專案：' + msg.folder + '\nIR：' + msg.irFile + '\n貼圖：' + msg.savedImages + ' 張' + errNoteSaved
+        );
+        btnExport.disabled = false;
+        exportCompleted = true;
+        refreshUiGuidance();
+        return;
+      }
+
+      if (msg.type === 'export-images') {
+        downloadJSON(msg.ir);
+        var assetMap = {};
+        function walk(n) {
+          if (n.asset) assetMap[n.figmaId] = n.asset;
+          (n.children || []).forEach(walk);
+        }
+        walk(msg.ir.root);
+        Object.entries(msg.images || {}).forEach(function (entry, i) {
+          setTimeout(function () {
+            var id = entry[0], b64 = entry[1];
+            var assetPath = assetMap[id];
+            if (!assetPath) return;
+            var filename = assetPath.indexOf('/') >= 0 ? assetPath.replace(/\//g, '__') : assetPath;
+            downloadBase64Png(b64, filename);
+          }, i * 300);
+        });
+        showStatus('已下載 IR + PNG。放入 assets/figma-import/ 後在 Cocos 匯入。');
+        btnExport.disabled = false;
+        exportCompleted = true;
+        refreshUiGuidance();
+      }
+    };
+
+    var organizeTimeoutInput = document.getElementById('organizeTimeoutMin');
+    if (organizeTimeoutInput) {
+      organizeTimeoutInput.addEventListener('change', scheduleSaveOrganizeTimeout);
+      organizeTimeoutInput.addEventListener('input', scheduleSaveOrganizeTimeout);
+    }
+
+    refreshUiGuidance();
+    loadOrganizeTimeoutSetting();
+    parent.postMessage({ pluginMessage: { type: 'list-pages' } }, '*');
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "figma-ai-organizer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Agent 整理 Figma IR：畫面不變 + 自適應階層",
+  "scripts": {
+    "build": "esbuild src/cli.ts --bundle --platform=node --format=cjs --outfile=dist/run.js --external:fs --external:@cursor/sdk --external:sharp && esbuild src/bridge-server.ts --bundle --platform=node --format=cjs --outfile=dist/bridge.js --external:fs --external:@cursor/sdk --external:sharp",
+    "organize": "npm run build && node dist/run.js",
+    "organize:cursor": "npm run build && node dist/run.js",
+    "bridge": "node scripts/free-bridge-port.js && npm run build && node dist/bridge.js"
+  },
+  "dependencies": {
+    "@cursor/sdk": "^1.0.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.4.5"
+  }
+}
